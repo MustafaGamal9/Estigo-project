@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { GHeaderProfileComponent } from '../shared/g-header-profile/g-header-profile.component';
-import { WHeaderProfileComponent } from '../shared/w-header-profile/w-header-profile.component';
+import { HomePageComponent } from '../pages/home-page/home-page.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,GHeaderProfileComponent,WHeaderProfileComponent],
+  imports: [RouterOutlet,HomePageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,0 +1,25 @@
+.assessments-section {
+    background-color: white;
+}
+.assessments-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+.assessments-text {
+    padding-left: 30px;
+}
+.assessments-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+.assessments-text p {
+    color: #777;
+    margin-bottom: 20px;
+}
+.assessments-image img {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}

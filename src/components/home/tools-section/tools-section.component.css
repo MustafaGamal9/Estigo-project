@@ -1,0 +1,24 @@
+.tools-section {
+    background-color: #f9f9f9;
+}
+.tools-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+.tools-text {
+    padding-left: 30px;
+}
+.tools-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+.tools-text p {
+    color: #777;
+}
+.tools-image img {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,26 @@
+footer {
+    background-color: #6A9C89; /* Updated footer background to green */
+    padding: 60px 0;
+    border-top: 1px solid #eee;
+}
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+.footer-logo img {
+    height: 100px;
+    margin-bottom: 20px;
+}
+.contact-details h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: white; /* Updated to white */
+}
+.contact-details p {
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.8); /* Updated to light color */
+}
+.contact-details a {
+    color: #fff; /* Updated to white */
+}

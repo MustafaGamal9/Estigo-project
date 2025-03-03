@@ -1,0 +1,57 @@
+.classroom-section {
+    background-color: #f9f9f9;
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; /* Space out text and image */
+    text-align: left; /* Align text to the left */
+}
+.classroom-section .container {
+    display: flex;                /* Places children in a row by default */
+    align-items: center;          /* Vertically center items */
+    justify-content: space-between;  /* Space them across the row */
+    max-width: 1200px;            /* Optional: constrain width */
+    margin: 0 auto;               /* Optional: center the container */
+    padding: 1rem;                /* Optional: spacing inside the container */
+}
+
+/* 2. Make text take leftover space, add some right margin */
+.classroom-text {
+    flex: 1;                      /* Expands to fill available space */
+    margin-right: 2rem;          /* Space between text and image */
+    padding-right: 20px; /* Add some right padding for spacing */
+}
+
+/* 3. Keep the image responsive */
+.classroom-video img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Image takes 100% of its container */
+    height: auto;
+    float: none; /* Remove float */
+    margin-left: 0; /* Remove left margin */
+}
+
+/* 4. Responsive tweak: stack on smaller screens */
+@media (max-width: 768px) {
+    .classroom-section .container {
+        flex-direction: column;     /* Stack items vertically */
+    }
+
+    .classroom-text {
+        margin-right: 0;           /* Reset margin */
+        margin-bottom: 1rem;       /* Add spacing below text */
+        padding-right: 0; /* Add some right padding for spacing */
+    }
+}
+.classroom-section .section-title {
+    text-align: left; /* Override center alignment for title */
+    font-size: 2rem; /* Make title smaller */
+    margin-bottom: 20px; /* Reduce bottom margin */
+}
+.classroom-video {
+    margin-top: 0; /* Remove top margin */
+    flex: 0 0 40%; /* Set image to take 40% of container width */
+    text-align: right; /* Align image to the right */
+}

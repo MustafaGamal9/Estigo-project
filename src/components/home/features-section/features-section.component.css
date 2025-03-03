@@ -1,0 +1,42 @@
+.features-section {
+    background-color: #f9f9f9;
+}
+.features-section .section-padding {
+    padding: 40px 0; /* Reduced padding here to 40px 0 */
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.feature-card {
+    background-color: #fff; /* White background for cards */
+    padding: 30px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft shadow */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effects */
+}
+
+.feature-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
+}
+
+
+.feature-card i {
+    font-size: 3rem;
+    color: #2F327D; /* Dark Blue icon color */
+    margin-bottom: 20px;
+}
+.feature-card h3 {
+    font-size: 1.3rem; /* Slightly smaller title */
+    font-weight: 600; /* Semi-bold title */
+    margin-bottom: 15px;
+    color: #2F327D; /* Dark Blue title color */
+}
+.feature-card p {
+    color: #5A6473; /* Grey description color */
+    line-height: 1.7; /* Improved readability for description */
+}

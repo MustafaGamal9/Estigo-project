@@ -1,0 +1,67 @@
+.what-is-estigo-section {
+    background-color: white;
+}
+.what-is-estigo-section .section-title {
+    max-width: 600px; /* Reduced max-width for title */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.what-is-estigo-section .section-subtitle {
+    max-width: 700px; /* Reduced max-width for subtitle */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.estigo-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+.estigo-card {
+    border-radius: 15px; /* More rounded corners for cards */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft shadow */
+    position: relative;
+}
+.estigo-card img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom; /* To remove bottom space in some browsers */
+}
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    text-align: center;
+}
+.card-content h3 {
+    font-size: 1.5rem; /* Reduced title font size */
+    font-weight: 600;
+    margin-bottom: 15px; /* Increased margin */
+    color: #2F327D;
+}
+.card-content p {
+    color: #5A6473;
+    margin-bottom: 20px; /* Increased margin */
+}
+.card-content button {
+    display: inline-block;
+    padding: 12px 30px; /* Adjusted button padding */
+    background-color: #6A9C89; /* Green button color */
+    color: white;
+    border-radius: 30px; /* More rounded button */
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.card-content button:hover {
+    background-color: #5A7F6E; /* Darker green on hover */
+}

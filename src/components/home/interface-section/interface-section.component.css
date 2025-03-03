@@ -1,0 +1,59 @@
+.interface-section {
+    background-color: white;
+}
+.interface-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+.interface-text {
+    padding-right: 30px;
+}
+.interface-text h2.section-title { /* Specific style for section title in interface section */
+    margin-bottom: 10px; /* Reduced margin */
+    font-size: 2rem; /* Adjusted font size */
+}
+.interface-text p.section-subtitle { /* Specific style for section subtitle in interface section */
+    margin-bottom: 20px; /* Reduced margin */
+    color: #7f8c8d; /* Light gray-blue color, same as general subtitle */
+}
+.interface-text h2 {
+    font-size: 1.7rem; /* Adjusted main title size */
+    margin-bottom: 20px;
+    color: #2c3e50; /* Dark blue-gray color */
+    text-align: left; /* Ensure left alignment */
+}
+.interface-list {
+    margin-top: 20px; /* Added margin above the list */
+}
+.interface-list li {
+    display: flex;
+    align-items: flex-start; /* Align items to the start, for better text alignment */
+    margin-bottom: 15px;
+}
+.interface-list li i { /* Style for the bullet icons */
+    font-size: 0.6rem; /* Adjust icon size */
+    margin-right: 10px;
+    margin-top: 6px; /* Adjust vertical alignment */
+}
+.interface-list li span {
+    display: none; /* Hide the old span bullets */
+}
+.interface-list li:nth-child(1) i {
+    color: #2F327D; /* Dark Blue icon color */
+}
+.interface-list li:nth-child(2) i {
+    color: #fd9c35; /* Orange icon color */
+}
+.interface-list li:nth-child(3) i {
+    color: #8e44ad; /* Purple-ish icon color */
+}
+.interface-list li p {
+    color: #5A6473; /* Grey description color */
+    text-align: left; /* Ensure text within list items is left-aligned */
+}
+.interface-image img {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
