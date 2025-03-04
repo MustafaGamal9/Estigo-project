@@ -1,0 +1,50 @@
+.sidebar {
+    background-color: #6A9C89;
+    color: white;
+    width: 290px;
+    /* height: 130vh;  Reduced sidebar height */
+    height: 120vh; /* Setting height to 100vh */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally in sidebar */
+    padding-top: 50px; /* Keep padding from top if needed */
+    position: relative; /* Establish positioning context */
+
+}
+
+
+.sidebar-nav {
+    width: 100%;
+    padding-left: 0px; /* Remove right padding */
+    padding-left: 60px; /* Remove left padding */
+    box-sizing: border-box; /* Include padding in width calculation */
+    display: flex; /* Enable flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    margin-top: 50px;
+}
+
+.sidebar-nav-item {
+    padding: 25px 20px;
+    text-decoration: none;
+    color: white; /* Changed text color to white */
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+    justify-content: flex-end; /* Center text horizontally within item */
+    width: 80%; /* Limit width of nav items for better centering */
+    box-sizing: border-box; /* Ensure padding is included in width */
+    text-align: center; /* Center text alignment for multi-line text if needed */
+    font-weight: 600; /* Increased font weight for better readability */
+    font-size: 1rem; /* Increased font size slightly */
+}
+
+.sidebar-nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly lighter white for hover */
+}
+
+.sidebar-nav-item i {
+    margin-right: 10px; /* Keep icon margin if you re-add icons */
+}

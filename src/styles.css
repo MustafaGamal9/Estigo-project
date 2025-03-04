@@ -4,6 +4,11 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  :root{
+    --estigo-green:#6A9C89;
+  }
+  
   body {
     font-family: 'Poppins', sans-serif;
     color: #fff;
@@ -40,4 +45,11 @@
     color: #7f8c8d; /* Light gray-blue */
     margin-bottom: 30px;
   }
+
+ 
+
+  .dashboard-container{
+    display: flex;
+  }
+  
   

@@ -1,0 +1,41 @@
+/* style.css */
+
+.payment-info-section {
+    border: 1px solid #ccc; /* Add a border to visually separate the section */
+    padding: 20px; /* Add padding around the content inside the section */
+    margin-bottom: 20px; /* Add margin below the section if there are other elements below it */
+    border-radius: 5px; /* Add rounded corners for a softer look */
+}
+
+.payment-info-section h2 {
+    font-size: 1.5em; /* Increase the font size of the heading */
+    margin-top: 0; /* Remove default top margin for the heading */
+    margin-bottom: 15px; /* Add some bottom margin to separate heading from details */
+    color: #333; /* Darken the heading text color */
+    border-bottom: 2px solid #eee; /* Add a subtle border below the heading */
+    padding-bottom: 5px; /* Add padding below the heading border */
+}
+
+.payment-details {
+    margin-bottom: 15px; /* Add margin between each payment detail block */
+    padding: 15px; /* Add padding inside each payment detail block */
+    border: 1px solid #eee; /* Add a light border around each payment detail block */
+    border-radius: 3px; /* Add rounded corners to each detail block */
+    background-color: #f9f9f9; /* Light background color to distinguish blocks */
+}
+
+.payment-details:last-child {
+    margin-bottom: 0; /* Remove bottom margin from the last payment detail block */
+}
+
+.payment-details p {
+    margin: 5px 0; /* Add vertical margin to paragraphs for spacing */
+    font-size: 1em; /* Set a base font size for the text */
+    color: #555; /* Slightly darker text color for details */
+}
+
+.payment-details strong {
+    font-weight: bold; /* Make the labels bold */
+    margin-right: 10px; /* Add some space between label and value */
+    color: #333; /* Darken the label text color */
+}

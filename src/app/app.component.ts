@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 
+
 // Path of the page: src/app/app.component.ts
 
 @Component({
@@ -11,6 +12,7 @@ import { CommonModule } from '@angular/common';
   imports: [
     RouterOutlet,
     CommonModule,
+
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

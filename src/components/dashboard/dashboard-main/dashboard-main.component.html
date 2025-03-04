@@ -1,0 +1,6 @@
+<div class="container dashboard-main">
+    <app-main-content *ngIf="selectedComponent === 'default'"></app-main-content>
+    <app-my-courses *ngIf="selectedComponent === 'my-courses'"></app-my-courses>
+   <app-payment-info *ngIf="selectedComponent === 'payment-info'"></app-payment-info>
+   <app-quizzies *ngIf="selectedComponent === 'quizzes'"   ></app-quizzies>
+</div>

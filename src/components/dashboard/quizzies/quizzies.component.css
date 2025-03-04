@@ -1,0 +1,67 @@
+/* style.css */
+
+/* ... (Previous styles for payment-info-section) ... */
+
+.quizzes-section {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.quizzes-section h2 {
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+.my-quizzes-list {
+    display: flex; /* Arrange quiz items in a row */
+    flex-direction: column; /* Stack quiz items vertically */
+    gap: 15px; /* Add spacing between quiz items */
+}
+
+.my-quiz-item {
+    display: flex; /* Arrange info and link in a row */
+    justify-content: space-between; /* Space out info and link */
+    align-items: center; /* Vertically align info and link */
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    background-color: #fff; /* White background for quiz items */
+}
+
+.my-quiz-item-info {
+    /* Styles for quiz title and grade (if needed, for spacing etc.) */
+}
+
+.my-quiz-item h4 {
+    font-size: 1.1em;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #333; /* Darker color for quiz title */
+}
+
+.my-quiz-item p {
+    margin: 0;
+    font-size: 1em;
+    color: #777; /* Lighter color for grade */
+}
+
+.my-quiz-item a {
+    display: inline-block; /* Make the link a block-level element for padding */
+    padding: 8px 15px;
+    background-color: #029335; /* Blue background for button-like link */
+    color: white; /* White text color for link */
+    text-decoration: none; /* Remove underline from link */
+    border-radius: 3px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.my-quiz-item a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

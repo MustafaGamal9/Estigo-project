@@ -1,0 +1,382 @@
+/* Main content styles */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Dashboard content grid */
+.dashboard-grid {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  Removed to allow individual section widths */
+    grid-template-columns: 1fr 1fr; /* Example: Two columns for overall layout if you want */
+    gap: 20px;
+    margin-top: 20px;
+
+}
+
+.dashboard-section {
+    padding: 20px;
+}
+
+
+.section-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-title a {
+    text-decoration: none;
+    color: #6A9C89;
+    font-size: 0.9em;
+}
+
+/* Enrolled Courses section */
+.enrolled-courses-grid {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap; /* Changed to nowrap to keep all items in the same line */
+}
+
+.course-card {
+background-color: #FFFFFF;
+border-radius: 15px;
+padding: 15px;
+width: calc(50% - 10px);
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+align-items: center;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth transition for transform and border-color */
+border: 2px solid transparent; /* Add this line: Transparent border by default */
+}
+
+.course-card:hover {
+border: 2px solid #6A9C89; /* Green border on hover */
+/* transform: scale(1.05);  */
+}
+
+.course-card img {
+    width: 80px;
+    height: 60px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.course-title {
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.course-view-button {
+    background-color: #6A9C89;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.course-view-button:hover {
+    background-color: #5e9179;
+}
+
+/* Course Instructors section */
+.instructors-list {
+    display: flex;
+    gap: 25px;
+    padding-bottom: 10px;
+}
+
+.instructor-profile {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 3px solid #5e9179;
+}
+
+.instructor-profile img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+}
+
+/* Quizzes section */
+.quiz-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.quiz-item {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.daily-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.daily-item {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+}
+
+.quiz-title {
+    font-weight: bold;
+    color: black;
+    margin-bottom: 5px;
+    font-size: 0.95em;
+}
+
+.quiz-grade {
+    color: #555;
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+.quiz-more {
+    display: block;
+    margin-top: 10px;
+    color: #6A9C89;
+    text-decoration: none;
+    font-size: 0.85em;
+}
+
+/* Hero Section Image Styling */
+.hero-section {
+    background-color: #6A9C89;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-text {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.hero-welcome {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.hero-image {
+    width: 200px;
+    height: auto;
+    margin-right: 30px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Specific styles for dynamically loaded content sections */
+.payment-info-section, .my-courses-section, .quizzes-section {
+    padding: 20px;
+}
+
+.payment-info-section h2, .my-courses-section h2, .quizzes-section h2 {
+    color: black;
+    margin-bottom: 20px;
+}
+
+.payment-details {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.payment-details p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.payment-details strong {
+    font-weight: bold;
+    color: black;
+}
+
+.my-courses-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjusted minmax for bigger boxes */
+    gap: 25px;
+}
+
+.my-course-item {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.my-course-item img {
+    width: 120px; /* Increased image size */
+    height: 90px; /* Increased image size */
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.my-course-item h3 {
+    font-weight: bold;
+    color: black;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+.hero-welcomeP
+{
+    color: white;
+    opacity: 0.8;
+}
+
+.my-course-item button {
+    background-color: #6A9C89;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1em;
+}
+
+ .my-course-item button:hover {
+    background-color: #5e9179;
+}
+
+.my-quizzes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.my-quiz-item {
+    background-color: #F7F7F7;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.my-quiz-item-info {
+    flex: 1;
+}
+
+.my-quiz-item h4 {
+    font-weight: bold;
+    color: black;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.my-quiz-item p {
+    color: #555;
+    font-size: 0.95em;
+}
+
+.my-quiz-item a {
+    background-color: #f0f0f0;
+    color: #6A9C89;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    font-size: 0.9em;
+}
+
+.my-quiz-item a:hover {
+    background-color: #e0e0e0;
+}
+
+/* --- SECTION SPECIFIC STYLES --- */
+/* You can add or override styles for each section here using their unique selectors */
+
+/* Example for Enrolled Courses Section in Default Dashboard */
+#enrolled-courses-section {
+    width: 750px; /* Example: Make it wider - 80% of dashboard-grid width */
+}
+
+
+#instructors-section {
+    width: 250px;
+    height: 40%;/* Example: Make it narrower - 40% of dashboard-grid width */
+}
+
+/* Example for Quizzes Section in Default Dashboard */
+#quizzes-default-section {
+    /* Add styles for Quizzes section */
+    border-radius: 30px; /* Example: More rounded corners */
+    width: 100%; /* Example: Medium width - 60% of dashboard-grid width */
+}
+
+/* Example for Daily Notice Section in Default Dashboard */
+#daily-notice-section {
+    /* Add styles for Daily Notice section */
+
+    width: 90%; /* Example: Medium width - 60% of dashboard-grid width */
+    margin-top: -150px;
+}
+
+
+.payment-info-section {
+    /* Add styles for Payment Information section */
+    background-color: #fff; /* Example: White background */
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #ddd;
+    padding: 30px; /* Increase padding */
+    width: 70%; /* Example: Width for Payment Info */
+}
+
+
+.my-courses-section {
+    /* Add styles for My Courses section */
+    padding: 40px; /* Example: Increase padding */
+    width: 90%; /* Example: Wider width for My Courses */
+}
+
+
+.quizzes-section {
+    /* Add styles for Quizzes and Grades section */
+    border: 1px solid #eee; /* Example: Add a subtle border */
+    width: 50%; /* Example: Width for dynamically loaded Quizzes */
+}

@@ -1,0 +1,60 @@
+.my-courses-section h2 {
+    color: black;
+    margin-bottom: 20px;
+}
+
+.my-courses-section {
+    display: flex; /* Keep flex for overall section layout if needed, can be removed if not necessary for other reasons */
+
+    padding: 40px;
+    width: 90%;
+}
+.my-courses-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-rows: repeat(2, 1fr); /* Two rows */
+    gap: 25px;
+    width: 100%;
+    max-width: 800px; /* Adjust based on your layout needs */
+    margin: 0 auto;
+}
+
+.my-course-item {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex; /* Keep flex for vertical alignment of content inside item */
+    flex-direction: column; /* Stack content vertically within each course item */
+    align-items: center; /* Center items horizontally inside the course item */
+    text-align: center; /* Center text alignment within the course item */
+}
+
+.my-course-item img {
+    max-width: 50%; /* Make image responsive within the course item */
+    height: auto;    /* Maintain image aspect ratio */
+    margin-bottom: 15px; /* Space below image */
+    border-radius: 10px; /* Optional: round image corners */
+    display: block; /* Ensure image behaves as a block element */
+}
+
+.my-course-item h3 {
+    margin-bottom: 10px; /* Space below title */
+    font-size: 1.2em; /* Slightly larger font for title */
+    color: black;
+}
+
+.my-course-item button {
+    background-color: #226b02; /* Example button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.my-course-item button:hover {
+    background-color: #0056b3;
+}
