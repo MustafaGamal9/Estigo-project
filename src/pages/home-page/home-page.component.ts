@@ -13,11 +13,12 @@ import { InstructorsSectionComponent } from '../../components/home/instructors-s
 import { GHeaderProfileComponent } from "../../shared/g-header-profile/g-header-profile.component";
 import { FooterComponent } from '../../shared/footer/footer.component';
 
+
 @Component({
   selector: 'app-home',
   standalone: true, 
   imports: [
-    CommonModule, 
+    CommonModule,
     HeroSectionComponent,
     FeaturesSectionComponent,
     WhatIsEstigoSectionComponent,
@@ -29,7 +30,7 @@ import { FooterComponent } from '../../shared/footer/footer.component';
     PopularCoursesSectionComponent,
     InstructorsSectionComponent,
     FooterComponent,
-    GHeaderProfileComponent
+    GHeaderProfileComponent,
 ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'

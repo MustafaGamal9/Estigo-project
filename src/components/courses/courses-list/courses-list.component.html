@@ -1,0 +1,15 @@
+<section class="courses-section">
+    <div class="courses-grid" id="courses-container">
+        <div *ngFor="let course of courses" class="course-card">
+            <div class="course-content">
+                <h3 class="course-title">{{course.title}}</h3>
+                <p class="course-description">{{course.subject ? course.subject : 'No description available'}}</p>
+                <p class="course-description">{{course.instrctorName ? course.instrctorName : 'No description available'}}</p>
+                <div class="course-price-section">
+                    <span class="discounted-price">${{course.price}}</span>
+                </div>
+            </div>
+        </div>
+        <p *ngIf="courses.length === 0" style="color: black;">No courses found.</p>
+    </div>
+</section>
