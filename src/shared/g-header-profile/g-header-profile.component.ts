@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-g-header-profile',
   imports: [CommonModule, RouterLink],
@@ -10,6 +11,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './g-header-profile.component.html',
   styleUrl: './g-header-profile.component.css'
 })
+
 export class GHeaderProfileComponent {
 
 }

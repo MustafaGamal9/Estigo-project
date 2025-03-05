@@ -13,6 +13,7 @@ header {
 }
 .logo img {
     height: 70px;
+    width: 250px;
 }
 .search-bar {
     position: relative;
