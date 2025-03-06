@@ -2,11 +2,8 @@
     background-color: #6A9C89;
 }
 .navbar {
-    position: fixed;
+
     top: 0;
     width: 100%;
     z-index: 1000;
-}
-body {
-    padding-top: 70px;
 }
