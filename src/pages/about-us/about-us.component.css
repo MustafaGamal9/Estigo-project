@@ -1,2 +1,77 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #f8f9fa;
+  text-align: center;
+}
+.here-we-go p{
+    font-size: x-large;
+    text-align: center;
+    
+}
+div {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
 
-/*  w el css hna */
+h3 {
+  font-size: 24px;
+  color: #2d635e;
+  border-bottom: 2px solid #2d635e;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+.para p{
+    font-size: 18px;
+    color: #fff;
+}
+.para {
+  background-color: #2d635e;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  text-align: left;
+  max-width: 600px;
+  margin: auto;
+  transform: rotate(-3deg);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+button {
+  background-color: #2d635e;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1f4b46;
+}
