@@ -1,42 +1,139 @@
+/* Enhanced Features Section with Animations */
 .features-section {
     background-color: #f9f9f9;
+    overflow: hidden; /* Prevent overflow from animations */
+    position: relative;
+    font-family: cursive;
+    font-optical-sizing: auto;
 }
-.features-section .section-padding {
-    padding: 40px 0; /* Reduced padding here to 40px 0 */
+
+/* Create floating particles in the background with a more natural drift */
+.features-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(78, 81, 255, 0.15) 2px, transparent 2px),
+                      radial-gradient(circle, rgba(47, 50, 125, 0.08) 1px, transparent 1px);
+    background-size: 50px 50px, 30px 30px;
+    animation: particlesFloat 8s ease-in-out infinite;
+    pointer-events: none;
+    opacity: 0.8;
 }
+
+@keyframes particlesFloat {
+    0% {
+        background-position: 0 0, 0 0;
+    }
+    25% {
+        background-position: 50px 20px, 30px 10px;
+    }
+    50% {
+        background-position: 80px 40px, 50px 20px;
+    }
+    75% {
+        background-position: 30px 60px, 20px 40px;
+    }
+    100% {
+        background-position: 0 0, 0 0;
+    }
+}
+
+
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
+
+@keyframes subtleGridShift {
+    0%, 100% { transform: rotate(0deg) translateX(0); }
+    25% { transform: rotate(0.3deg) translateX(5px); }
+    75% { transform: rotate(-0.3deg) translateX(-5px); }
+}
+
 .feature-card {
     background-color: #fff; /* White background for cards */
     padding: 30px;
     border-radius: 15px; /* Rounded corners */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft shadow */
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effects */
+    position: relative; /* For absolute positioning of pseudo-elements */
+    overflow: hidden; /* Keep effects contained */
 }
-
-.feature-card:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
-}
-
-
 .feature-card i {
     font-size: 3rem;
-    color: #2F327D; /* Dark Blue icon color */
+    color: #2F327D; 
     margin-bottom: 20px;
+    display: inline-block; 
+    animation: iconFloat 3s ease-in-out infinite;
 }
+
+/* floating icons */
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* hover on icons */
+.feature-card:hover i {
+    transform: scale(1.3) rotate(10deg);
+    animation: iconShake 0.5s ease-in-out;
+}
+
+/* Icon shake animation */
+@keyframes iconShake {
+    0%, 100% { transform: scale(1.3) rotate(10deg); }
+    20% { transform: scale(1.3) rotate(5deg); }
+    40% { transform: scale(1.3) rotate(15deg); }
+    60% { transform: scale(1.3) rotate(5deg); }
+    80% { transform: scale(1.3) rotate(15deg); }
+}
+
+
+
 .feature-card h3 {
-    font-size: 1.3rem; /* Slightly smaller title */
-    font-weight: 600; /* Semi-bold title */
+    font-size: 1.3rem; 
+    font-weight: 600; 
     margin-bottom: 15px;
-    color: #2F327D; /* Dark Blue title color */
+    color: #2F327D; 
+    position: relative;
 }
+
+
+
+
+
 .feature-card p {
-    color: #5A6473; /* Grey description color */
-    line-height: 1.7; /* Improved readability for description */
+    color: #5A6473; 
+    line-height: 1.7;
+    position: relative;
+
 }
+
+/* Creating a pulsing border effect on hover with enhanced styling */
+.feature-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease, border-radius 0.4s ease;
+    pointer-events: none; /* Makes sure it doesn't interfere with clicks */
+    z-index: 1;
+}
+
+.feature-card:hover::after {
+    border-color: rgba(78, 81, 255, 0.3); /* Semi-transparent brand color */
+    /* Add enhanced border animation */
+    animation: enhancedPulse 1.5s infinite alternate;
+    border-radius: 18px; /* Match the card's hover border-radius */
+}
+
+

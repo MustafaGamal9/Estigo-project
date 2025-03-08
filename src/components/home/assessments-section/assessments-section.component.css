@@ -1,25 +1,88 @@
 .assessments-section {
     background-color: white;
+    padding: 40px 20px;
 }
+
 .assessments-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
 .assessments-text {
     padding-left: 30px;
 }
+
 .assessments-text h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #2c3e50;
 }
+
 .assessments-text p {
     color: #777;
     margin-bottom: 20px;
+    line-height: 1.6;
 }
+
 .assessments-image img {
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 992px) {
+    .assessments-grid {
+        gap: 30px;
+    }
+    
+    .assessments-text h2 {
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .assessments-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .assessments-text {
+        padding-left: 0;
+        order: 1;
+    }
+    
+    .assessments-image {
+        order: 2;
+        text-align: center;
+    }
+    
+    .assessments-image img {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .assessments-section {
+        padding: 30px 15px;
+    }
+    
+    .assessments-text h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .assessments-text p {
+        margin-bottom: 15px;
+    }
+    
+    .assessments-image img {
+        width: 90%;
+    }
 }

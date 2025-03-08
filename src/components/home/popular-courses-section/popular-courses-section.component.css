@@ -1,10 +1,10 @@
 .popular-courses-section {
     background-color: white;
 }
+
 .popular-courses-section .section-title {
     text-align: left;
 }
-
 
 .popular-courses-carousel {
     display: flex;
@@ -26,14 +26,13 @@
 }
 
 .popular-courses-carousel::-webkit-scrollbar-thumb {
-    background: #ccc; /* Scrollbar thumb color */
+    background: var(--estigo-green); /* Green to match the price */
     border-radius: 5px;
 }
 
 .popular-courses-carousel::-webkit-scrollbar-thumb:hover {
-    background: #bbb; /* Scrollbar thumb hover color */
+    background: var(--estigo-green); /* Darker green on hover */
 }
-
 
 .course-card {
     background-color: #f9f9f9;
@@ -42,35 +41,58 @@
     min-width: 250px; /* Minimum width for each card */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     scroll-snap-align: start; /* Snap cards to the start */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for scaling and shadow */
 }
+
+.course-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow for a lifted effect */
+}
+
 .course-card img {
     width: 100%;
     height: 150px;
     object-fit: cover;
+    transition: transform 0.3s ease; /* Smooth zoom transition */
 }
+
+.course-card:hover img {
+    transform: scale(1.1); /* Zoom in the image slightly */
+}
+
 .course-content {
     padding: 20px;
 }
+
 .course-title {
     font-size: 1.2rem;
     margin-bottom: 10px;
     color: #2c3e50;
+    transition: color 0.3s ease; /* Smooth color transition */
 }
+
+.course-card:hover .course-title {
+    color: var(--estigo-green); /* Green to match the price */
+}
+
 .course-rating {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
     color: #f39c12; /* Gold star color */
 }
+
 .course-rating i {
     margin-right: 5px;
 }
+
 .course-rating span {
     color: #777;
     font-size: 0.9rem;
     margin-left: 5px;
 }
+
 .course-price {
     font-weight: bold;
-    color: #27ae60; /* Green price color */
+    color: var(--estigo-green); /* Green price color */
 }
