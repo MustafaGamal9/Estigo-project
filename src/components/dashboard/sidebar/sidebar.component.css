@@ -2,14 +2,14 @@
     background-color: #6A9C89;
     color: white;
     width: 290px;
-    /* height: 130vh;  Reduced sidebar height */
-    height: 120vh; /* Setting height to 100vh */
+    height: 100vh; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center items horizontally in sidebar */
-    padding-top: 50px; /* Keep padding from top if needed */
-    position: relative; /* Establish positioning context */
-
+    align-items: center;
+    padding-top: 50px;
+    position: sticky;
+    top: 0; 
+    left: 0; 
 }
 
 

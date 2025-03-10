@@ -1,18 +1,47 @@
-.custom-bg{
-    background-color: #6A9C89;
-}
-.navbar {
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-#search{
-    top: 50%; 
-    transform:
-     translateY(-50%);
-      border: none; 
-      background: transparent; 
-      color: white; 
-      pointer-events: none;
+.custom-bg { 
+    background-color: #6A9C89; 
+} 
 
+.navbar { 
+    top: 0; 
+    width: 100%; 
+    z-index: 1000; 
+} 
+
+#search { 
+    top: 50%; 
+    transform: translateY(-50%); 
+    border: none; 
+    background: transparent; 
+    color: white; 
+    pointer-events: none; 
+}
+
+/* Hover effect for nav links */
+.navbar .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: var(--estigo-orange) !important; 
+}
+
+.navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--estigo-orange);
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar .nav-item:last-child .nav-link::after {
+    display: none;
 }
