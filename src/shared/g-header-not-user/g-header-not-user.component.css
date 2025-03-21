@@ -45,15 +45,3 @@
 .navbar .nav-item:last-child .nav-link::after {
     display: none;
 }
-
-.nav-link img{
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    background-color: rgba(255, 255, 255, 0.3);
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}

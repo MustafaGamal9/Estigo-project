@@ -12,6 +12,7 @@ import { PopularCoursesSectionComponent } from '../../components/home/popular-co
 import { InstructorsSectionComponent } from '../../components/home/instructors-section/instructors-section.component';
 import { GHeaderProfileComponent } from "../../shared/g-header-profile/g-header-profile.component";
 import { FooterComponent } from '../../shared/footer/footer.component';
+import { GHeaderNotUserComponent } from '../../shared/g-header-not-user/g-header-not-user.component';
 
 
 @Component({
@@ -31,6 +32,7 @@ import { FooterComponent } from '../../shared/footer/footer.component';
     InstructorsSectionComponent,
     FooterComponent,
     GHeaderProfileComponent,
+    GHeaderNotUserComponent
 ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'

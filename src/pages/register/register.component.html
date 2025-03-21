@@ -1,0 +1,70 @@
+<app-g-header-not-user></app-g-header-not-user>
+<div class="wrapper">
+    <!-- Left Image -->
+    <img src="Group 42.png" alt="Person Drawing" class="left-image">
+    <!-- Right Image -->
+    <img src="chatbot 1.png" alt="Robot with Speech Bubbles" class="right-image">
+    <!-- Registration Form Container -->
+    <div class="container">
+        <form>
+            <label for="firstName">First Name</label>
+            <input class="input" type="text" id="firstName" placeholder="Enter your First Name">
+            <label for="lastName">Last Name</label>
+            <input class="input" type="text" id="lastName" placeholder="Enter your Last Name">
+
+            <label for="email">Email</label>
+            <input class="input" type="email" id="email" placeholder="Enter your Email">
+
+            <label for="password">Password</label>
+            <div class="password-wrapper">
+                <input class="input" type="password" id="password" placeholder="Enter your Password">
+
+            </div>
+
+            <label for="confirmPassword">Confirm Password</label>
+            <div class="password-wrapper">
+                <input class="input" type="password" id="confirmPassword" placeholder="Confirm your Password">
+            </div>
+
+            <label for="role">Role</label>
+            <select class="input" id="role" #roleDropdown [(ngModel)]="selectedRole">  
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+                <option value="parent">Parent</option>
+            </select>
+
+            <div id="track-container" style="display: none;" #trackContainer> 
+                <label for="track">Track</label>
+                <select class="input" id="track">
+                    <option value="">Select Track</option>
+                    <option value="est">EST</option>
+                    <option value="ig">IG</option>
+                </select>
+            </div>
+
+            <div id="subject-container" style="display: none;" #subjectContainer> 
+                <label for="subject">Subject</label>
+                <select class="input" id="subject">
+                    <option value="">Select Subject</option>
+                    <option value="math">Math</option>
+                    <option value="english">English</option>
+                    <option value="science">Science</option>
+                </select>
+            </div>
+
+            <div id="parent-code-container" style="display: none;" #parentCodeContainer>
+                <label for="parentCode">Student Code</label>
+                <input class="input" type="text" id="parentCode" placeholder="Enter student code">
+            </div>
+
+            <button type="submit">SIGN UP</button>
+            <p>or sign up with</p>
+            <div class="social-login">
+                <button class="google"><img src="google.ico" alt="Google"></button>
+                <button class="facebook"><img src="facebook.ico" alt="Facebook"></button>
+            </div>
+            <p>Already have an account? <a routerLink="/login">Login</a></p>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>

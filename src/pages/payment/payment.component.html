@@ -1,0 +1,57 @@
+<app-g-header-profile></app-g-header-profile>
+
+<div class="checkout-container">
+    <div class="checkout-box">
+        <h2>Checkout</h2>
+        <p>Card Type</p>
+        <div class="payment-options">
+            <img src="visa.ico" alt="Visa" />
+            <img src="fawry.jpeg" alt="fawry" />
+            <img src="vodafone.ico" alt="vodaphonecash" />
+        </div>
+        <form>
+            <label for="card-name">Name on Card</label>
+            <input type="text" id="card-name" placeholder="Enter name on card" />
+
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" placeholder="Enter Card Number" />
+
+            <div class="card-details">
+                <div>
+                    <label for="expiry-date">Expiration Date (MM/YY)</label>
+                    <input type="text" id="expiry-date" placeholder="MM/YY" />
+                </div>
+                <div>
+                    <label for="cvc">CVC</label>
+                    <input type="text" id="cvc" placeholder="Enter CVC" />
+                </div>
+            </div>
+
+            <button class="confirm-btn">Confirm Payment</button>
+        </form>
+    </div>
+
+    <div class="summary-box">
+        <h2>Summary</h2>
+        <div class="summary-item">
+            <img src="girl.png" alt="Course Image" />
+            <p>Math In Estigo</p>
+            <span style="color: green; font-size: large"> <b>$24.89</b></span>
+        </div>
+        <div class="summary-item">
+            <img src="girl.png" alt="Course Image" />
+            <p>Math In Estigo</p>
+            <span style="color: green; font-size: large"> <b>$24.89</b></span>
+        </div>
+
+        <div class="summary-footer">
+            <p>Subtotal: <span>$49.78</span></p>
+        
+            <h3>
+                Total: <span style="color: tomato; font-size: x-large">$47.291</span>
+            </h3>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

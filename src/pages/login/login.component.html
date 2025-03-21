@@ -1,32 +1,38 @@
-<app-g-header-profile></app-g-header-profile>
-<main class="login-container">
-    <!-- Add the character image with the path you provided -->
-    <img src="Learning-pana.svg" alt="Learning illustration" class="animated-character">
-
-    <div class="login-form">
-        <img src="dark.png" alt="Estigo Academy Logo" style="width: 150px; display: block; margin: 0 auto 20px auto;">
-       
+<app-g-header-not-user></app-g-header-not-user>
+<div class="wrapper">
+    <!-- Left Image -->
+    <img src="Group 42.png" alt="Person Drawing" class="left-image">
+    <!-- Right Image -->
+    <img src="chatbot 1.png" alt="Robot with Speech Bubbles" class="right-image">
+    <!-- Login Form Container -->
+    <div class="container">
         <form>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
+            <h1>
+                Welcome to Estigo
+                <!-- <img src="dark.png" alt="ESTIGO Logo" style="display:inline-block;height: 2em; vertical-align: middle;"> -->
+            </h1>
+            <label for="email">Email</label>
+            <input class="input" type="email" id="email" placeholder="Enter your Email">
+            <label for="password">Password</label>
+            <div class="password-wrapper">
+                <input class="input" type="password" id="password" placeholder="Enter your Password">
+              
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password" required>
+            <div class="options">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <a href="#">Forgot Password?</a>
             </div>
-            <div class="form-options">
-                <label>
-                    <input type="checkbox"> Remember me
-                </label>
-                <a href="#">Forgot password?</a>
+            <button type="submit">LOGIN</button>
+            <p>or sign in with</p>
+            <div class="social-login">
+                <button class="google"><img src="google.ico" alt="Google"></button>
+                <button class="facebook"><img src="facebook.ico" alt="Facebook"></button>
             </div>
-            <button type="submit" class="login-btn">Login</button>
+            <p>Don't have an account? <a routerLink="/register">Sign up</a></p>
         </form>
-        <div class="signup-link">
-            Don't have an account? <a href="#">Sign up</a>
-        </div>
     </div>
-</main>
-
+</div>
 <app-footer></app-footer>

@@ -1,5 +1,5 @@
 .custom-bg { 
-    background-color: #6A9C89; 
+    background-color: white; 
 } 
 
 .navbar { 
@@ -24,7 +24,7 @@
 }
 
 .navbar .nav-link:hover {
-    color: var(--estigo-orange) !important; 
+    color: var(--estigo-green) !important; 
 }
 
 .navbar .nav-link::after {
@@ -34,26 +34,15 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--estigo-orange);
+    background-color: var(--estigo-green);
     transition: width 0.3s ease;
 }
 
 .navbar .nav-link:hover::after {
-    width: 100%;
+    width: 100%; 
 }
+
 
 .navbar .nav-item:last-child .nav-link::after {
     display: none;
-}
-
-.nav-link img{
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    background-color: rgba(255, 255, 255, 0.3);
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
