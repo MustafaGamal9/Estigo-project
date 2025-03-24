@@ -1,15 +1,18 @@
 <section class="search-section">
     <div class="search-container">
-        <input type="text" class="search-input" placeholder="Search your favourite course"
-               [(ngModel)]="searchTerm"> 
-        <button class="search-button" (click)="onSearch()">Search</button>
+        <input type="text" class="search-input" placeholder="Search your favourite course">
+        <button class="search-button">Search</button>
     </div>
     <div class="filter-container">
-        <select class="filter-dropdown" [(ngModel)]="selectedSubject" (change)="onSubjectChange($event)">
-            <option *ngFor="let subject of subjects" [value]="subject.value">{{subject.display}}</option>
+        <select class="filter-dropdown">
+            <option value="math">Math</option>
+            <option value="science">Science</option>
+            <option value="english">English</option>
         </select>
-        <select class="filter-dropdown" [(ngModel)]="selectedGrade" (change)="onGradeChange($event)">
-            <option *ngFor="let grade of grades" [value]="grade.value">{{grade.display}}</option>
+        <select class="filter-dropdown">
+            <option value="grade1">Grade 1</option>
+            <option value="grade2">Grade 2</option>
+            <option value="grade3">Grade 3</option>
         </select>
     </div>
 </section>

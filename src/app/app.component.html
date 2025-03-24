@@ -1,1 +1,17 @@
+<ng-container [ngSwitch]="currentHeaderType">
+    <!-- White headers (for courses page) -->
+    <ng-container *ngSwitchCase="'white'">
+        <app-w-header-profile *ngIf="isAuthenticated"></app-w-header-profile>
+        <app-w-header-not-user *ngIf="!isAuthenticated"></app-w-header-not-user>
+    </ng-container>
+    
+    <!-- Green headers (default) -->
+    <ng-container *ngSwitchDefault>
+        <app-g-header-profile *ngIf="isAuthenticated"></app-g-header-profile>
+        <app-g-header-not-user *ngIf="!isAuthenticated"></app-g-header-not-user>
+    </ng-container>
+</ng-container>
+
 <router-outlet></router-outlet>
+
+<app-footer></app-footer>

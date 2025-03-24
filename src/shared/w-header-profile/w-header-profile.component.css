@@ -46,3 +46,7 @@
 .navbar .nav-item:last-child .nav-link::after {
     display: none;
 }
+
+.nav-item{
+    cursor: pointer;
+}

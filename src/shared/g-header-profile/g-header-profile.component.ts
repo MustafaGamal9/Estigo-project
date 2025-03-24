@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,5 +14,14 @@ import { RouterLink } from '@angular/router';
 })
 
 export class GHeaderProfileComponent {
+  constructor(private authService: AuthService, private router: Router) {}
+
+  onLogout(): void {
+    // Simple logout functionality
+    this.authService.logout();
+    this.router.navigate(['/']);
+  }
+  
+
 
 }

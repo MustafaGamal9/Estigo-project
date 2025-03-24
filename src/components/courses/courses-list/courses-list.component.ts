@@ -42,25 +42,4 @@ export class CoursesListComponent implements OnInit {
       console.error('Error fetching courses:', error);
     }
   }
-
-  onSearchFilterChanged(filters: { searchTerm: string, subject: string, grade: string }) {
-    this.courses = this.filterCourses(filters);
-  }
-
-  filterCourses(filters: { searchTerm: string, subject: string, grade: string }): Course[] {
-    return this.allCourses.filter(course => {
-      const searchTermLower = filters.searchTerm.toLowerCase();
-      const titleLower = course.title.toLowerCase();
-      const subjectLower = course.subject.toLowerCase();
-      const gradeLower = course.grade.toLowerCase();
-      const selectedSubjectLower = filters.subject.toLowerCase();
-      const selectedGradeLower = filters.grade.toLowerCase();
-
-      const titleMatch = !searchTermLower || titleLower.includes(searchTermLower);
-      const subjectMatch = !filters.subject || subjectLower === selectedSubjectLower;
-      const gradeMatch = !filters.grade || gradeLower === selectedGradeLower;
-
-      return titleMatch && subjectMatch && gradeMatch;
-    });
-  }
 }

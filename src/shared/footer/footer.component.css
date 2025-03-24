@@ -1,10 +1,10 @@
 /* Modern Footer Design */
 footer {
     background-color: #6A9C89;
-    background-image: linear-gradient(135deg, #6A9C89, #527a6d);
+    
     padding: 60px 0 40px;
     border-top: none;
-    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.08);
+   
     position: relative;
     overflow: hidden;
 }
@@ -16,7 +16,6 @@ footer::before {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0.5), #fff);
 }
 
 .footer-container {
@@ -37,7 +36,7 @@ footer::before {
 .footer-logo img {
     height: 70px;
     margin-bottom: 20px;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    
     transition: all 0.3s ease;
 }
 
@@ -232,7 +231,7 @@ footer::before {
     text-decoration: underline;
 }
 
-/* Newsletter subscription */
+
 
 
 
