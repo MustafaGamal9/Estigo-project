@@ -10,28 +10,7 @@
     display: flex;
     overflow-x: auto; /* Enable horizontal scrolling */
     gap: 20px;
-    padding-bottom: 20px; /* Space for scrollbar */
-    scroll-snap-type: x mandatory; /* Enable snap scrolling */
-    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
-    position: relative; /* For navigation arrows positioning */
-    scroll-behavior: smooth; /* Add smooth scrolling behavior */
-}
-
-.popular-courses-carousel::-webkit-scrollbar {
-    height: 5px; /* Adjust scrollbar height */
-}
-
-.popular-courses-carousel::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Scrollbar track color */
-}
-
-.popular-courses-carousel::-webkit-scrollbar-thumb {
-    background: var(--estigo-green); /* Green to match the price */
-    border-radius: 5px;
-}
-
-.popular-courses-carousel::-webkit-scrollbar-thumb:hover {
-    background: var(--estigo-green); /* Darker green on hover */
+    padding-bottom: 10px; /* Space for scrollbar */
 }
 
 .course-card {
@@ -45,7 +24,6 @@
 }
 
 .course-card:hover {
-    transform: scale(1.05); /* Slightly enlarge the card */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow for a lifted effect */
 }
 
@@ -75,24 +53,47 @@
     color: var(--estigo-green); /* Green to match the price */
 }
 
-.course-rating {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    color: #f39c12; /* Gold star color */
+.loading {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #666;
 }
 
-.course-rating i {
-    margin-right: 5px;
-}
-
-.course-rating span {
-    color: #777;
+.teacher-name {
+    color: #666;
     font-size: 0.9rem;
-    margin-left: 5px;
+    margin-top: 0.5rem;
 }
 
-.course-price {
-    font-weight: bold;
-    color: var(--estigo-green); /* Green price color */
+@media (max-width: 768px) {
+    .popular-courses-carousel {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .course-card {
+        width: 100%;
+        min-width: unset;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .course-card img {
+        height: 200px;
+    }
+
+    .course-content {
+        padding: 15px;
+    }
+
+    .course-title {
+        font-size: 1.1rem;
+    }
+
+    .teacher-name {
+        font-size: 0.85rem;
+    }
 }

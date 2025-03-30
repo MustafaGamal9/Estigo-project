@@ -1,21 +1,42 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+
+interface Course {
+  courseId: number;
+  courseTitle: string;
+  imageBase64: string;
+  teacherName: string;
+}
+
 @Component({
   selector: 'app-popular-courses-section',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './popular-courses-section.component.html',
   styleUrl: './popular-courses-section.component.css'
 })
-export class PopularCoursesSectionComponent {
-  @ViewChild('popularCoursesCarousel', { static: false }) popularCoursesCarousel!: ElementRef;
+export class PopularCoursesSectionComponent implements OnInit {
+  courses: Course[] = [];
+  isLoading: boolean = true;
 
-  ngAfterViewInit(): void {
-    this.initializeCarousel();
+  constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    this.fetchCourses();
   }
 
-  initializeCarousel() {
-    const carousel = this.popularCoursesCarousel.nativeElement;
-    const cards = carousel.querySelectorAll('.course-card');
-
-    if (!cards.length) return;
-
-}}
+  fetchCourses() {
+    this.http.get<Course[]>('http://est.runasp.net/api/Course/HomepageCourses')
+      .subscribe({
+        next: (data) => {
+          this.courses = data;
+          this.isLoading = false;
+        },
+        error: (error) => {
+          console.error('Error fetching courses:', error);
+          this.isLoading = false;
+        }
+      });
+  }
+}

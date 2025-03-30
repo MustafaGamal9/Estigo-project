@@ -2,94 +2,14 @@
     <div class="container">
         <h2 class="section-title" style="text-align: left; color:#2F327D">Most <span style="color:#6A9C89;">Popular Courses</span></h2>
         <div class="popular-courses-carousel" #popularCoursesCarousel>
-            <div class="course-card">
-                <img src="girl.png" alt="HTML Course">
-                <div class="course-content">
-                    <h3 class="course-title">HTML</h3>
-                    <div class="course-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <span>(15)</span>
-                    </div>
-                    <p class="course-price">$ 500</p>
-                </div>
+            <div *ngIf="isLoading" class="loading">
+                Loading courses...
             </div>
-            <div class="course-card">
-                <img src="girl.png" alt="Design Course">
+            <div *ngFor="let course of courses" class="course-card">
+                <img [src]="'data:image/jpeg;base64,' + course.imageBase64" [alt]="course.courseTitle">
                 <div class="course-content">
-                    <h3 class="course-title">Design</h3>
-                    <div class="course-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span>(20)</span>
-                    </div>
-                    <p class="course-price">$ 500</p>
-                </div>
-            </div>
-            <div class="course-card">
-                <img src="girl.png" alt="Business Course">
-                <div class="course-content">
-                    <h3 class="course-title">Business</h3>
-                    <div class="course-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>(102)</span>
-                    </div>
-                    <p class="course-price">$ 500</p>
-                </div>
-            </div>
-            <div class="course-card">
-                <img src="girl.png" alt="Social Media Course">
-                <div class="course-content">
-                    <h3 class="course-title">Social Media</h3>
-                    <div class="course-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <span>(20)</span>
-                    </div>
-                    <p class="course-price">$ 500</p>
-                </div>
-            </div>
-            <div class="course-card">
-                <img src="girl.png" alt="HTML Course">
-                <div class="course-content">
-                    <h3 class="course-title">HTML</h3>
-                    <div class="course-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <span>(15)</span>
-                    </div>
-                    <p class="course-price">$ 500</p>
-                </div>
-            </div>
-            <div class="course-card">
-                <img src="girl.png" alt="HTML Course">
-                <div class="course-content">
-                    <h3 class="course-title">HTML</h3>
-                    <div class="course-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <span>(15)</span>
-                    </div>
-                    <p class="course-price">$ 500</p>
-                </div>
-            </div>
-            <div class="course-card">
-                <img src="girl.png" alt="HTML Course">
-                <div class="course-content">
-                    <h3 class="course-title">HTML</h3>
-                    <div class="course-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <span>(15)</span>
-                    </div>
-                    <p class="course-price">$ 500</p>
-                </div>
-            </div>
-            <div class="course-card">
-                <img src="girl.png" alt="HTML Course">
-                <div class="course-content">
-                    <h3 class="course-title">HTML</h3>
-                    <div class="course-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <span>(15)</span>
-                    </div>
-                    <p class="course-price">$ 500</p>
-                </div>
-            </div>
-            <div class="course-card">
-                <img src="girl.png" alt="HTML Course">
-                <div class="course-content">
-                    <h3 class="course-title">HTML</h3>
-                    <div class="course-rating">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> <span>(15)</span>
-                    </div>
-                    <p class="course-price">$ 500</p>
+                    <h3 class="course-title">{{course.courseTitle}}</h3>
+                    <p class="teacher-name">By {{course.teacherName}}</p>
                 </div>
             </div>
         </div>

@@ -1,0 +1,20 @@
+<section class="courses-section section-padding">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">English Courses</h2>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="courses-container">
+            <div class="course-card" *ngFor="let course of courses">
+                <img [src]="course.imageBase64" [alt]="course.courseTitle">
+                <div>
+                    <h3 class="course-title">{{course.courseTitle}}</h3>
+                    <p class="course-instructor">Course Instructor</p>
+                </div>
+                <p class="course-price">${{course.price}}</p>
+            </div>
+        </div>
+    </div>
+</section>

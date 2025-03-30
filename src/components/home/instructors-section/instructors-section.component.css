@@ -10,28 +10,11 @@
     display: flex;
     overflow-x: auto;
     gap: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     position: relative;
     scroll-behavior: smooth;
-}
-
-.instructors-carousel::-webkit-scrollbar {
-    height: 5px;
-}
-
-.instructors-carousel::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-.instructors-carousel::-webkit-scrollbar-thumb {
-    background: #6A9C89;
-    border-radius: 5px;
-}
-
-.instructors-carousel::-webkit-scrollbar-thumb:hover {
-    background: #6A9C89;
 }
 
 .instructor-card {
@@ -46,7 +29,7 @@
 }
 
 .instructor-card:hover {
-    transform: scale(1.05) translateY(-5px);
+   
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -73,10 +56,38 @@
 }
 
 .instructor-card:hover .instructor-name {
-    color: #27ae60;
+    color: var(--estigo-green);
 }
 
 .instructor-expertise {
     color: #777;
     font-size: 0.9rem;
 }
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #666;
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+    .instructors-carousel {
+        flex-direction: column;
+        gap: 15px;
+        overflow-x: hidden;
+    }
+
+    .instructor-card {
+        min-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+
+

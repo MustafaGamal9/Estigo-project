@@ -10,20 +10,16 @@ export class AuthService {
   
   
   public isAuthenticated$: Observable<boolean> = this.isAuthenticatedSubject.asObservable();
-
-  constructor() { }
-
   
   login(): void {
 
     this.isAuthenticatedSubject.next(true);
-    console.log('User logged in successfully');
+    
   }
 
 
   logout(): void {
     this.isAuthenticatedSubject.next(false);
-    console.log('User logged out');
   }
 
 

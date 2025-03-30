@@ -8,6 +8,9 @@ import { WHeaderProfileComponent } from "../shared/w-header-profile/w-header-pro
 import { FooterComponent } from "../shared/footer/footer.component";
 import { Router, NavigationEnd } from '@angular/router'; 
 import { AuthService } from '../services/auth.service';
+import { ChatbotIconComponent } from "../shared/chatbot-icon/chatbot-icon.component";
+import { CourseVideoComponent } from "../pages/course-video/course-video.component";
+
 
 @Component({
   selector: 'app-root',
@@ -15,41 +18,29 @@ import { AuthService } from '../services/auth.service';
   imports: [
     RouterOutlet,
     CommonModule,
-    WHeaderNotUserComponent,
-    WHeaderProfileComponent,
     FooterComponent,
     GHeaderNotUserComponent,
-    GHeaderProfileComponent
+    GHeaderProfileComponent,
+    ChatbotIconComponent,
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'estigo-academy-homepage';
-  currentHeaderType: string = 'default'; 
+  title = 'Estigo';
   isAuthenticated: boolean = false;
+  isHomePage: boolean = false; // Add a property to track if it's the home page
 
   constructor(private router: Router, private authService: AuthService) { 
-     
-      this.router.events.subscribe((event) => { 
-          if (event instanceof NavigationEnd) { 
-              this.updateHeaderForRoute(event.url);
-          }
-      });
-      this.updateHeaderForRoute(this.router.url);
-      
-      
       this.authService.isAuthenticated$.subscribe(isAuthenticated => {
           this.isAuthenticated = isAuthenticated;
       });
-  }
 
-  updateHeaderForRoute(url: string): void {
-      if (url.includes('/courses')) { 
-          this.currentHeaderType = 'white';
-
-      } else {
-          this.currentHeaderType = 'green'; 
-      }
+      // Subscribe to router events to check if the current route is the home page
+      this.router.events.subscribe(event => {
+          if (event instanceof NavigationEnd) {
+              this.isHomePage = this.router.url === '/'; // Adjust the condition based on your home page route
+          }
+      });
   }
 }

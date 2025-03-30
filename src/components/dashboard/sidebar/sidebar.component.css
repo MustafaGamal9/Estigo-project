@@ -11,7 +11,9 @@
     top: 0; 
     left: 0; 
 }
-
+a {
+    cursor:pointer;
+}
 
 .sidebar-nav {
     width: 100%;

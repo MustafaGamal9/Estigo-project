@@ -1,0 +1,118 @@
+<!-- START OF ORIGINAL FILE course-video.component.html (No changes needed) -->
+<div class="learning-page">
+    <main class="main-content" id="main-content-area">
+      <section class="video-area" id="video-section">
+        <p class="video-breadcrumb" #videoBreadcrumb id="video-breadcrumb">Introduction to Generative AI - Generative AI History</p>
+        <div class="video-player-container" #videoPlayerContainer id="video-player-container">
+          <video #courseVideo id="course-video" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-controls">
+            <button class="control-button" id="prev-vid-btn"><span class="icon">◀</span></button>
+            <button class="control-button" #playPauseBtn id="play-pause-btn"><span class="icon">▶</span></button>
+            <button class="control-button" id="next-vid-btn"><span class="icon">▶</span></button>
+            <div class="seek-bar-container" #seekBarContainer id="seek-bar-container">
+              <div class="seek-bar">
+                <div class="seek-bar-progress" #seekBarProgress id="seek-bar-progress"></div>
+                <div class="seek-handle" #seekHandle id="seek-handle"></div>
+              </div>
+            </div>
+            <span class="time-display" #timeDisplay id="time-display">-0:00</span>
+            <span class="speed-control">1x</span>
+            <button class="control-button" #fullscreenBtn id="fullscreen-btn"><span class="icon">⤡</span></button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="sidebar" #sidebar id="sidebar">
+        <nav class="course-outline" #courseOutline id="course-outline">
+          <!-- Section 1: Introduction to Generative Models (Expanded) -->
+          <div class="outline-section">
+            <div class="section-header" data-level="section">
+              <span class="section-icon"><span></span><span></span></span>
+              <div class="section-title">
+                <span>Introduction to Generative Models</span>
+                <small>14 Topic</small>
+              </div>
+              <span class="collapse-indicator"><span class="icon">▼</span></span>
+            </div>
+            <div class="section-content">
+              <!-- Subsection 1.1: Introduction to Generative AI (Expanded) -->
+              <div class="outline-subsection">
+                <div class="subsection-header" data-level="subsection">
+                  <div class="section-title">
+                    <span>Introduction to Generative AI</span>
+                    <small>4 Topic</small>
+                  </div>
+                  <span class="collapse-indicator"><span class="icon">▼</span></span>
+                </div>
+                <div class="subsection-content">
+                  <div class="outline-category">
+                    <span>Text Capsules</span>
+                  </div>
+                  <!-- Item 1.1.1 (Active, Completed) -->
+                  <div class="outline-item active-item" #outlineItem data-item-id="gen-ai-history" data-breadcrumb="Introduction to Generative AI - Generative AI History">
+                    <span class="item-status-indicator"><span class="icon">✓</span></span> <!-- Checkmark Icon -->
+                    <div class="item-details">
+                      <span>Generative AI History</span>
+                      <small>1 minute 54 seconds</small>
+                    </div>
+                  </div>
+                  <!-- Item 1.1.2 (Play) -->
+                  <div class="outline-item" #outlineItem data-item-id="gen-vs-disc" data-breadcrumb="Introduction to Generative AI - Generative AI vs Discriminative AI">
+                    <span class="item-status-indicator"><span class="icon">▶</span></span> <!-- Play Icon -->
+                    <div class="item-details">
+                      <span>Generative AI vs Discriminative AI</span>
+                      <small>2 minutes 4 seconds</small>
+                    </div>
+                  </div>
+                  <!-- Item 1.1.3 (Quiz) -->
+                  <div class="outline-item" #outlineItem data-item-id="quiz-1" data-breadcrumb="Introduction to Generative AI - Quiz">
+                    <span class="item-status-indicator"><span class="icon">◎</span></span> <!-- Quiz/Target Icon -->
+                    <div class="item-details">
+                      <span>Quiz</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: Variational Auto-encoder (VAEs) (Collapsed) -->
+          <div class="outline-section">
+            <div class="section-header" data-level="section">
+               <span class="section-icon"><span></span><span></span></span>
+              <div class="section-title">
+                <span>Variational Auto-encoder (VAEs)</span>
+                <small>3 Topic</small>
+              </div>
+              <span class="collapse-indicator collapsed"><span class="icon">▶</span></span>
+            </div>
+            <div class="section-content collapsed">
+              <div class="outline-item" #outlineItem data-item-id="vae-intro" data-breadcrumb="Variational Auto-encoder (VAEs) - Introduction to VAEs">
+                <span class="item-status-indicator"><span class="icon">▶</span></span>
+                <div class="item-details">
+                  <span>Introduction to VAEs</span>
+                  <small>3 minutes 10 seconds</small>
+                </div>
+              </div>
+              <div class="outline-item" #outlineItem data-item-id="vae-math" data-breadcrumb="Variational Auto-encoder (VAEs) - The Math Behind VAEs">
+                <span class="item-status-indicator"><span class="icon">▶</span></span>
+                <div class="item-details">
+                  <span>The Math Behind VAEs</span>
+                  <small>5 minutes 20 seconds</small>
+                </div>
+              </div>
+              <div class="outline-item" #outlineItem data-item-id="vae-quiz" data-breadcrumb="Variational Auto-encoder (VAEs) - Quiz">
+                <span class="item-status-indicator"><span class="icon">◎</span></span>
+                <div class="item-details">
+                  <span>Quiz</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </aside>
+    </main>
+  </div>
+<!-- END OF ORIGINAL FILE course-video.component.html -->

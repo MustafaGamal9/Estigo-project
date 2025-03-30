@@ -5,11 +5,27 @@
     box-sizing: border-box;
   }
 
-  :root{
-    --estigo-green:#6A9C89;
-    --estigo-orange:#fd9c35;
-    --estigo-blue:#2F327D;
-  }
+  :root {
+    --estigo-green: #6A9C89;
+    --estigo-orange: #FD9C35;
+    --estigo-blue: #2F327D;
+
+    /* Neutral Colors */
+    --estigo-off-white: #F8F9FA;
+    --estigo-light-beige: #EDE0D4;
+    --estigo-soft-gray: #D1D5DB;
+
+    /* Accent Colors */
+    --estigo-deep-purple: #4B3F72;
+    --estigo-bright-cyan: #00C4CC;
+    --estigo-warm-red: #D72638;
+
+    /* Monochromatic Variations */
+    --estigo-light-green: #A8C3B6;
+    --estigo-soft-orange: #FFC885;
+    --estigo-muted-blue: #6B73B5;
+}
+
   
   body {
     font-family: cursive;

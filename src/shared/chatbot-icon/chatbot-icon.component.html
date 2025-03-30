@@ -1,0 +1,30 @@
+<!-- The Chatbot Icon Button -->
+<button class="chatbot-icon-container" aria-label="Open Chatbot" (click)="toggleChat()">
+    <img src="robot.png" class="chatbot-icon" alt="Chatbot Icon">
+  </button>
+  
+  <!-- The Chat Window (Integrated) -->
+  <div class="chat-window-container" *ngIf="isChatOpen">
+    <div class="chat-header">
+      <span>Estigo Assistant</span>
+      <!-- Close button now calls toggleChat directly -->
+      <button class="close-button" (click)="toggleChat()" aria-label="Close Chat">×</button>
+    </div>
+  
+    <div class="chat-body">
+      <!-- Chat messages will go here -->
+      <p class="message assistant">Hello! How can I help you today?</p>
+      <!-- Example user message -->
+      <!-- <p class="message user">I need help with my course.</p> -->
+    </div>
+  
+    <div class="chat-footer">
+      <input
+        type="text"
+        placeholder="Type your message..."
+        [(ngModel)]="userInput"
+        (keyup.enter)="sendMessage()"
+       />
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  </div>

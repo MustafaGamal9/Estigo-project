@@ -1,45 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MathComponent } from "../math/math.component";
+import { EnglishComponent } from "../english/english.component";
+import { BiologyComponent } from "../biology/biology.component";
+import { PhysicsComponent } from "../physics/physics.component";
+import { ChemistryComponent } from "../chemistry/chemistry.component";
 
-interface Course {
-  id: number;
-  title: string;
-  subject: string;
-  price: number;
-  instrctorName : string;
-  grade: string;
-
-}
 
 @Component({
   selector: 'app-courses-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MathComponent, EnglishComponent, BiologyComponent, PhysicsComponent, ChemistryComponent],
   templateUrl: './courses-list.component.html',
   styleUrls: ['./courses-list.component.css']
 
 })
-export class CoursesListComponent implements OnInit {
-  courses: Course[] = [];
-  allCourses: Course[] = []; 
+export class CoursesListComponent {
 
-
-  ngOnInit(): void {
-    this.fetchCourses();
-  }
-
-  async fetchCourses() {
-    try {
-      const response = await fetch("https://localhost:7092/api/Course");
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const coursesData: Course[] = await response.json();
-      this.allCourses = coursesData; 
-      this.courses = coursesData;      
-      console.log('Courses data:', this.courses);
-    } catch (error) {
-      console.error('Error fetching courses:', error);
-    }
-  }
 }
