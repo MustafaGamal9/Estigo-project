@@ -6,7 +6,7 @@
                 Loading instructors...
             </div>
             <div *ngFor="let teacher of teachers" class="instructor-card">
-                <img [src]="'data:image/jpeg;base64,' + teacher.image" [alt]="teacher.name">
+                <img [src]="teacher.image" [alt]="teacher.name">
                 <h3 class="instructor-name">{{teacher.name}}</h3>
                 <p class="instructor-expertise">{{teacher.subject}}</p>
             </div>

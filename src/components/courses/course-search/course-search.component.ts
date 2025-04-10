@@ -62,14 +62,11 @@ export class CourseSearchComponent implements OnInit { // Implement OnInit
         throw new Error(`Network response was not ok (Status: ${response.status})`);
       }
       const data = await response.json();
-
       if (Array.isArray(data)) {
-          // Add data URL prefix to base64 images
-          this.courses = data.map((course: any) => ({ // Use 'any' temporarily if API structure isn't guaranteed
+          this.courses = data.map((course: any) => ({
             courseId: course.courseId,
             courseTitle: course.courseTitle,
-            // Ensure imageBase64 exists before prepending
-            imageBase64: course.imageBase64 ? `data:image/jpeg;base64,${course.imageBase64}` : 'assets/placeholder.png', // Provide a fallback image
+            imageBase64: course.imageBase64 , 
             price: course.price,
             teacherName: course.teacherName
           }));

@@ -31,17 +31,12 @@ export class CourseVmComponent implements OnInit {
 
   async fetchCourseDetails(catID: number): Promise<void> {
     try {
-      
       const response = await fetch(`http://est.runasp.net/api/Course/category/${catID}`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
       const data = await response.json();
-      // Add data URL prefix to base64 images
-      this.courses = data.map((course: Course) => ({
-        ...course,
-        imageBase64: `data:image/jpeg;base64,${course.imageBase64}`
-      }));
+      this.courses = data;
     } catch (error) {
       console.error('Error fetching courses:', error);
     }

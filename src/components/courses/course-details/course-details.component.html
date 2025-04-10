@@ -2,7 +2,7 @@
   <div *ngIf="course" class="course-content-grid">
     <div class="left-section">
       <div class="course-image-section">
-        <img [src]="'data:image/jpeg;base64,' + course.logo" 
+        <img [src]="course.logo" 
              [alt]="course.courseTitle"
              class="course-image">
       </div>

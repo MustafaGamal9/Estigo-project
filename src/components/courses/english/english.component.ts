@@ -29,11 +29,7 @@ export class EnglishComponent implements OnInit {
         throw new Error('Network response was not ok');
       }
       const data = await response.json();
-      // Add data URL prefix to base64 images
-      this.courses = data.map((course: Course) => ({
-        ...course,
-        imageBase64: `data:image/jpeg;base64,${course.imageBase64}`
-      }));
+      this.courses = data;
     } catch (error) {
       console.error('Error fetching courses:', error);
     }

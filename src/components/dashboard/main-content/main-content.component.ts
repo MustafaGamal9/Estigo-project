@@ -126,23 +126,14 @@ export class MainContentComponent implements OnInit {
 
  
   getImageSource(
-      base64String: string | null | undefined,
-      defaultImageUrl: string,
-      mimeType: string = 'image/jpeg'
+      imageUrl: string | null | undefined,
+      defaultImageUrl: string
     ): SafeUrl | string {
-      if (base64String && base64String.length > 0) {
+      if (imageUrl) {
           try {
-        
-            if (base64String.startsWith('data:image')) {
-                 return this.sanitizer.bypassSecurityTrustUrl(base64String);
-            }
-           
-            const imageUrl = `data:${mimeType};base64,${base64String}`;
-
-            return this.sanitizer.bypassSecurityTrustUrl(imageUrl);
+              return this.sanitizer.bypassSecurityTrustUrl(imageUrl);
           } catch (e) {
-              console.error("Error processing base64 string:", e);
-             
+              console.error("Error processing image URL:", e);
               return defaultImageUrl;
           }
       }

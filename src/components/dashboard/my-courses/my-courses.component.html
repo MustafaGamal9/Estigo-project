@@ -10,7 +10,7 @@
     <div *ngFor="let course of courses" class="course-card"  [routerLink]="['/myCourse', course.courseId]">
       
       <div class="card-image-container">
-        <img [src]="'data:image/jpeg;base64,' + course.imageBase64" [alt]="course.courseTitle">
+        <img [src]="course.imageBase64" [alt]="course.courseTitle">
       </div>
       <div class="card-content">
         <h3 class="card-title">{{ course.courseTitle }}</h3>
