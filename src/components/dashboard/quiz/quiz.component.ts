@@ -39,7 +39,7 @@ export class QuizComponent implements OnInit, OnDestroy {
   // --- Configuration ---
   readonly quizTitle = 'Object Oriented Programming - Midterm Quiz';
   readonly timeLimitMinutes = 15;
-  private readonly questionsApiUrl = 'http://est.runasp.net/api/Exam/QuestionsWithoutAnswer/12';
+  private readonly questionsApiUrl = 'https://est.runasp.net/api/Exam/QuestionsWithoutAnswer/12';
 
   // --- Component State ---
   questions: QuizQuestion[] = [];

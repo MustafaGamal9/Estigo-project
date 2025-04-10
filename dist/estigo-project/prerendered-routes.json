@@ -1,0 +1,13 @@
+{
+  "routes": {
+    "/": {},
+    "/aboutus": {},
+    "/courses": {},
+    "/dashboard": {},
+    "/login": {},
+    "/quiz": {},
+    "/register": {},
+    "/roadmap": {},
+    "/video": {}
+  }
+}

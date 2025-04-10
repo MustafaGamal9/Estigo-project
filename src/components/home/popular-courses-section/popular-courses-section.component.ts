@@ -27,7 +27,7 @@ export class PopularCoursesSectionComponent implements OnInit {
   }
 
   fetchCourses() {
-    this.http.get<Course[]>('http://est.runasp.net/api/Course/HomepageCourses')
+    this.http.get<Course[]>('https://est.runasp.net/api/Course/HomepageCourses')
       .subscribe({
         next: (data) => {
           this.courses = data;

@@ -54,7 +54,7 @@ export class MycoursePageComponent implements OnInit {
   }
 
   getCourseDetails(courseId: string): void {
-    const apiUrl = `http://est.runasp.net/api/Lesson/GetCourseDetails/${courseId}`;
+    const apiUrl = `https://est.runasp.net/api/Lesson/GetCourseDetails/${courseId}`;
     this.isLoading = true;
     this.fetchError = null;
     this.contentList = []; // Reset the display list

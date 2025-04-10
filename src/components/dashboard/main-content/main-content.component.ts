@@ -94,7 +94,7 @@ export class MainContentComponent implements OnInit {
         }
 
         this.studentName = userInfo?.name || 'User';
-        const apiUrl = `http://est.runasp.net/api/Dashboard/student/${studentId}`;
+        const apiUrl = `https://est.runasp.net/api/Dashboard/student/${studentId}`;
 
         this.dashboardData$ = this.http.get<StudentDashboardData>(apiUrl).pipe(
             tap(data => {
