@@ -30,7 +30,7 @@
                     </div>
                     <div class="enrolled-courses-grid" *ngIf="data.enrolledCourses && data.enrolledCourses.length > 0; else noCourses">
                         <div class="course-card" *ngFor="let course of data.enrolledCourses">
-                            <!-- *** Use getImageSource function *** -->
+                            
                             <img [src]="getImageSource(course.courseImageUrl, 'girl.png')" [alt]="course.courseName">
                             <h5 class="course-title">{{ course.courseName }}</h5>
                             <button class="course-view-button">View</button>

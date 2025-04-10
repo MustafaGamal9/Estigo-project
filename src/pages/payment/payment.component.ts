@@ -141,7 +141,7 @@ export class PaymentComponent implements OnInit {
   get courseImageUrl(): string {
     // Use placeholder if logo is missing or empty
     return this.courseData?.logo
-           ? `data:image/jpeg;base64,${this.courseData.logo}`
+           ? this.courseData.logo
            : 'assets/images/placeholder-course.png'; // Adjust placeholder path
   }
 
