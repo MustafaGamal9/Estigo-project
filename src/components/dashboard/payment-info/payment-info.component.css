@@ -1,41 +1,164 @@
-/* style.css */
-
-.payment-info-section {
-    border: 1px solid #ccc; /* Add a border to visually separate the section */
-    padding: 20px; /* Add padding around the content inside the section */
-    margin-bottom: 20px; /* Add margin below the section if there are other elements below it */
-    border-radius: 5px; /* Add rounded corners for a softer look */
+:host {
+    display: block;
+    background-color: #f8f9fa;
+    font-family: 'Poppins', sans-serif;
+    padding: 30px 40px;
 }
-
-.payment-info-section h2 {
-    font-size: 1.5em; /* Increase the font size of the heading */
-    margin-top: 0; /* Remove default top margin for the heading */
-    margin-bottom: 15px; /* Add some bottom margin to separate heading from details */
-    color: #333; /* Darken the heading text color */
-    border-bottom: 2px solid #eee; /* Add a subtle border below the heading */
-    padding-bottom: 5px; /* Add padding below the heading border */
+  
+.page-container {
+    max-width: 1300px;
+    margin: 0 auto;
 }
-
-.payment-details {
-    margin-bottom: 15px; /* Add margin between each payment detail block */
-    padding: 15px; /* Add padding inside each payment detail block */
-    border: 1px solid #eee; /* Add a light border around each payment detail block */
-    border-radius: 3px; /* Add rounded corners to each detail block */
-    background-color: #f9f9f9; /* Light background color to distinguish blocks */
+  
+.payment-history-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 30px 0;
 }
-
-.payment-details:last-child {
-    margin-bottom: 0; /* Remove bottom margin from the last payment detail block */
+  
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
-
-.payment-details p {
-    margin: 5px 0; /* Add vertical margin to paragraphs for spacing */
-    font-size: 1em; /* Set a base font size for the text */
-    color: #555; /* Slightly darker text color for details */
+  
+.payment-record {
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
-
-.payment-details strong {
-    font-weight: bold; /* Make the labels bold */
-    margin-right: 10px; /* Add some space between label and value */
-    color: #333; /* Darken the label text color */
+  
+.payment-record:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+  
+.payment-record.status-failed-card {
+    background-color: #fffafa;
+}
+  
+.record-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    flex-shrink: 0;
+}
+  
+.record-title {
+    font-weight: 600;
+    font-size: 1.05em;
+    color: #343a40;
+}
+  
+.record-date {
+    font-size: 0.85em;
+    font-weight: 500;
+    color: #6c757d;
+    background-color: #e9ecef;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+  
+.record-details {
+    padding: 0px 20px 20px 20px;
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    flex-grow: 1;
+}
+  
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+  
+.detail-label {
+    font-size: 0.75em;
+    font-weight: 600;
+    color: #adb5bd;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+  
+.detail-value {
+    font-size: 0.95em;
+    color: #343a40;
+    font-weight: 500;
+    word-break: break-word;
+    line-height: 1.4;
+}
+  
+.detail-value.amount {
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #343a40;
+}
+  
+.detail-value.method .payment-icon {
+    margin-right: 7px;
+    color: #6c757d;
+    width: 1.1em;
+    text-align: center;
+    font-size: 1.1em;
+}
+  
+.detail-value.method .fa-paypal { color: #003087; }
+.detail-value.method .fa-credit-card { color: #ff9f00; }
+.detail-value.method .fa-university { color: #6c757d; }
+  
+.detail-value.status {
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 0.8em;
+    text-align: center;
+    letter-spacing: 0.3px;
+    margin-top: 3px;
+    border: 1px solid transparent;
+    background-color: #e9ecef;
+    color: #495057;
+}
+  
+.detail-value.status-successful {
+    color: #0a7c8a;
+    background-color: #cff4fc;
+    border-color: #b6effb;
+}
+  
+.detail-value.status-failed {
+    color: #b02a37;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+  
+@media (max-width: 768px) {
+    :host {
+        padding: 20px;
+    }
+    .payment-history-section h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    .history-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+    }
+}
+  
+@media (max-width: 480px) {
+    .history-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .record-details {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
 }

@@ -18,12 +18,6 @@
     padding-right: 30px;
 }
 
-.interface-text h2.section-title {
-    margin-bottom: 10px;
-    font-size: 2rem;
-    line-height: 1.2;
-}
-
 .interface-text p.section-subtitle {
     margin-bottom: 20px;
     color: #7f8c8d;
@@ -32,11 +26,14 @@
 }
 
 .interface-text h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    color: #2c3e50;
+    font-size: 2.5rem;
+    color: var(--estigo-blue);
     text-align: left;
     line-height: 1.3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .interface-list {
@@ -78,7 +75,7 @@
     color: #5A6473;
     text-align: left;
     margin: 0;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     line-height: 1.5;
 }
 
@@ -90,7 +87,81 @@
     margin: 0 auto;
 }
 
+.loader {
+    font-weight: 500;
+    box-sizing: content-box;
+    height: 45px;
+    padding: 0;
+    display: inline-flex;
+    vertical-align: middle;
+    padding-bottom: 30px;
+}
+
+.words {
+    overflow: hidden;
+    position: relative;
+    height: 62px;
+    margin-top: 5px;
+}
+
+.word {
+    display: block;
+    height: 100%;
+    padding-left: 6px;
+    color: var(--estigo-green);
+    animation: spin_4991 6s infinite;
+    font-size: 2.9rem;
+}
+
+@keyframes spin_4991 {
+    10% {
+      -webkit-transform: translateY(-102%);
+      transform: translateY(-102%);
+    }
+  
+    25% {
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+    }
+  
+    35% {
+      -webkit-transform: translateY(-202%);
+      transform: translateY(-202%);
+    }
+  
+    50% {
+      -webkit-transform: translateY(-200%);
+      transform: translateY(-200%);
+    }
+  
+    60% {
+      -webkit-transform: translateY(-302%);
+      transform: translateY(-302%);
+    }
+  
+    75% {
+      -webkit-transform: translateY(-300%);
+      transform: translateY(-300%);
+    }
+  
+    85% {
+      -webkit-transform: translateY(-102%);
+      transform: translateY(-102%);
+    }
+  
+    100% {
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+    }
+}
+
 /* Media Queries for Responsiveness */
+@media screen and (max-width: 1200px) {
+    .interface-grid {
+        gap: 40px;
+    }
+}
+
 @media screen and (max-width: 992px) {
     .interface-grid {
         gap: 30px;
@@ -100,12 +171,25 @@
         padding-right: 15px;
     }
     
-    .interface-text h2.section-title {
-        font-size: 1.8rem;
+    .interface-text h2 {
+        font-size: 2.2rem;
+      
     }
     
-    .interface-text h2 {
-        font-size: 1.6rem;
+    .word {
+        font-size: 2.2rem;
+    }
+    
+    .interface-list li p {
+        font-size: 1rem;
+    }
+    
+    .loader {
+        padding-bottom: 20px;
+    }
+    
+    .words {
+        height: 55px;
     }
 }
 
@@ -118,6 +202,17 @@
     .interface-text {
         padding-right: 0;
         order: 1;
+        text-align: center;
+    }
+    
+    .interface-text h2 {
+        justify-content: center;
+        font-size: 2rem;
+        
+    }
+    
+    .word {
+        font-size: 2rem;
     }
     
     .interface-image {
@@ -128,6 +223,19 @@
     .interface-image img {
         width: 90%;
     }
+    
+    .interface-list {
+        text-align: left;
+    }
+    
+    .loader {
+        padding-bottom: 15px;
+    }
+    
+    .words {
+        height: 45px;
+        margin-top: 5px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -135,23 +243,52 @@
         padding: 30px 15px;
     }
     
-    .interface-text h2.section-title {
-        font-size: 1.6rem;
-    }
-    
-    .interface-text p.section-subtitle {
-        font-size: 0.9rem;
-    }
-    
     .interface-text h2 {
-        font-size: 1.4rem;
+        font-size: 2rem;
+        
+    }
+    
+    .word {
+        font-size: 2rem;
+    }
+    
+    .interface-list li p {
+        font-size: 0.95rem;
+    }
+    
+    .interface-image img {
+        width: 100%;
+    }
+    
+    .loader {
+        padding-bottom: 10px;
+    }
+    
+    .words {
+        height: 45px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .interface-text h2 {
+        font-size: 1.5rem;
+       
+    }
+    
+    .word {
+        font-size: 1.5rem;
     }
     
     .interface-list li p {
         font-size: 0.9rem;
     }
     
-    .interface-image img {
-        width: 100%;
+    .loader {
+        padding-bottom: 8px;
+    }
+    
+    .words {
+        height: 40px;
     }
 }
+  

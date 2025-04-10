@@ -1,20 +1,27 @@
+<!-- Mobile Toggle Button -->
+<button class="sidebar-toggle" [class.active]="isSidebarOpen" (click)="toggleSidebar()" *ngIf="isMobileView">
+    <i class="fas" [class.fa-bars]="!isSidebarOpen" [class.fa-times]="isSidebarOpen"></i>
+</button>
 
-    <div class=" sidebar">
-
+<!-- Sidebar -->
+<div class="sidebar" [class.open]="isSidebarOpen">
     <nav class="sidebar-nav">
-        <a  class="sidebar-nav-item" id="payment-info-link" (click)="onLinkClicked('default')">
+        <a class="sidebar-nav-item" id="home-link" (click)="onLinkClicked('Page1')">
             <i class="fas fa-home"></i> Main Content
         </a>
-        <a  class="sidebar-nav-item" id="payment-info-link" (click)="onLinkClicked('payment-info')">
+        <a class="sidebar-nav-item" id="payment-info-link" (click)="onLinkClicked('Page2')">
             <i class="fas fa-credit-card"></i> Payment Info
         </a>
-        <a  class="sidebar-nav-item" id="my-courses-link" (click)="onLinkClicked('my-courses')">
+        <a class="sidebar-nav-item" id="my-courses-link" (click)="onLinkClicked('Page3')">
             <i class="fas fa-book"></i> My Courses
         </a>
-        <a  class="sidebar-nav-item" id="quizzes-link" (click)="onLinkClicked('quizzes')">
+        <a class="sidebar-nav-item" id="quizzes-link" (click)="onLinkClicked('Page4')">
             <i class="fas fa-question-circle"></i> Quizzies
         </a>
     </nav>
 </div>
+
+<!-- Overlay for mobile -->
+<div class="sidebar-overlay" [class.active]="isSidebarOpen" *ngIf="isMobileView" (click)="toggleSidebar()"></div>
 
 

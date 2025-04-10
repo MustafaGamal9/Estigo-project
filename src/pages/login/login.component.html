@@ -1,4 +1,3 @@
-
 <div class="wrapper">
     <!-- Left Image -->
     <img src="Group 42.png" alt="Person Drawing" class="left-image">
@@ -6,17 +5,21 @@
     <img src="chatbot 1.png" alt="Robot with Speech Bubbles" class="right-image">
     <!-- Login Form Container -->
     <div class="container">
-        <form>
+        <form (ngSubmit)="onSubmit()">
             <h1>
-                Welcome to Estigo
+                Welcome to <span>Estigo</span>
                 <!-- <img src="dark.png" alt="ESTIGO Logo" style="display:inline-block;height: 2em; vertical-align: middle;"> -->
             </h1>
-            <label for="email">Email</label>
-            <input class="input" type="email" id="email" placeholder="Enter your Email">
-            <label for="password">Password</label>
             <div class="password-wrapper">
-                <input class="input" type="password" id="password" placeholder="Enter your Password">
-              
+                <input class="input" type="email" id="email" [(ngModel)]="email" name="email" placeholder=" ">
+                <label for="email">Email</label>
+            </div>
+            <div class="password-wrapper">
+                <input class="input" type="password" id="password" [(ngModel)]="password" name="password" placeholder=" ">
+                <label for="password">Password</label>
+            </div>
+            <div *ngIf="errorMessage" class="alert alert-danger">
+                {{ errorMessage }}
             </div>
             <div class="options">
                 <div class="remember-me">
@@ -25,7 +28,9 @@
                 </div>
                 <a href="#">Forgot Password?</a>
             </div>
-            <button type="submit" (click)="onLogin(); $event.preventDefault()">LOGIN</button>
+            <button type="submit" [disabled]="isLoading">
+                {{ isLoading ? 'Logging in...' : 'LOGIN' }}
+            </button>
             <p>or sign in with</p>
             <div class="social-login">
                 <button class="google"><img src="google.ico" alt="Google"></button>
@@ -35,3 +40,6 @@
         </form>
     </div>
 </div>
+
+
+

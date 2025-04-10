@@ -1,27 +1,48 @@
-<section class="quizzes-section">
-    <h2>Quizzes and Grades</h2>
-    <div class="my-quizzes-list">
+<div class="page-container"> <!-- Consistent page wrapper -->
+    <section class="quizzes-section">
+      <h2>Quizzes and Grades</h2>
+  
+      <div class="my-quizzes-list">
+        <!-- Quiz Item 1 -->
         <div class="my-quiz-item">
-            <div class="my-quiz-item-info">
-                <h4>Midterm Exam - OOP</h4>
-                <p>Grade: 88%</p>
-            </div>
-            <a href="#">Open</a>
+          <div class="my-quiz-item-info">
+            <h4>Midterm Exam - OOP</h4>
+            <p class="quiz-grade">Grade: <span class="grade-value">88%</span></p>
+          </div>
+          <!-- Use a more descriptive class -->
+          <a href="#" class="view-quiz-link">View Details</a>
         </div>
+  
+        <!-- Quiz Item 2 -->
         <div class="my-quiz-item">
-            <div class="my-quiz-item-info">
-                <h4>Quiz 2 - Database Fundamentals</h4>
-                <p>Grade: 92%</p>
-            </div>
-            <a href="#">Open</a>
+          <div class="my-quiz-item-info">
+            <h4>Quiz 2 - Database Fundamentals</h4>
+            <p class="quiz-grade">Grade: <span class="grade-value">92%</span></p>
+          </div>
+          <a href="#" class="view-quiz-link">View Details</a>
         </div>
+  
+        <!-- Quiz Item 3 -->
         <div class="my-quiz-item">
-            <div class="my-quiz-item-info">
-                <h4>Final Exam - Web Development</h4>
-                <p>Grade: 75%</p>
-            </div>
-            <a href="#">Open</a>
+          <div class="my-quiz-item-info">
+            <h4>Final Exam - Web Development</h4>
+            <p class="quiz-grade">Grade: <span class="grade-value low-grade">75%</span></p> <!-- Optional class for low grade -->
+          </div>
+          <a href="#" class="view-quiz-link">View Details</a>
         </div>
-        <!-- Add more quizzes as needed -->
-    </div>
-</section>
+  
+        <!-- Quiz Item 4 (Not Graded) -->
+        <div class="my-quiz-item item-not-graded"> <!-- Add class to item -->
+          <div class="my-quiz-item-info">
+            <h4>Assignment 1 - Data Structures</h4>
+            <!-- Removed grade P tag here, status span is enough -->
+          </div>
+          <!-- Status indicator instead of link -->
+          <span class="quiz-status status-not-graded">Not Graded Yet</span>
+        </div>
+  
+        <!-- Add more quiz items as needed -->
+  
+      </div>
+    </section>
+  </div>

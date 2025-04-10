@@ -28,8 +28,10 @@
 
   
   body {
-    font-family: cursive;
+    /* font-family: cursive; */
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
+    background-color: #f8f9fa;
   }
   img {
     max-width: 100%;

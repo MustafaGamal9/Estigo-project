@@ -1,0 +1,50 @@
+<!-- Display the search term -->
+<div *ngIf="searchTerm" class="container mt-3">
+    <h2>Results for: "{{ searchTerm }}"</h2>
+</div>
+<div *ngIf="!searchTerm && !isLoading && !error" class="container mt-3">
+    <h2>Search Courses</h2>
+    <p>Please use the search bar in the header to find courses.</p>
+</div>
+
+
+<!-- Optional: Loading Indicator -->
+<div *ngIf="isLoading" class="container mt-3 text-center">
+    <p>Loading results...</p>
+    <!-- You can add a spinner here -->
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+<!-- Optional: Error Message -->
+<div *ngIf="error && !isLoading" class="container mt-3 alert alert-danger">
+    {{ error }}
+</div>
+
+<!-- Display Results -->
+<div class="container mt-3">
+    <!-- Show message if no courses found for the term -->
+    <div *ngIf="!isLoading && !error && searchTerm && courses.length === 0" class="alert alert-info">
+        No courses found matching "{{ searchTerm }}".
+    </div>
+
+    <!-- Loop through courses -->
+    <div *ngIf="courses.length > 0" class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Use *ngFor to iterate -->
+        <div *ngFor="let course of courses" [routerLink]="['/course', course.courseId]" class="col">
+            <div class="card h-100">
+                 <!-- Use [src] for binding -->
+                <img [src]="course.imageBase64" class="card-img-top" [alt]="course.courseTitle" style="height: 200px; object-fit: cover;">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title course-title">{{ course.courseTitle }}</h5>
+                    <p class="card-text course-instructor"><small class="text-muted">By {{ course.teacherName }}</small></p>
+                    <!-- Pushed to bottom -->
+                    <p class="card-text course-price mt-auto"><strong>${{ course.price }}</strong></p>
+                    <!-- Add a link to the course details page if you have one -->
+                    <!-- <a href="#" class="btn btn-primary mt-2">View Course</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -6,7 +6,8 @@ interface Course {
   courseId: number;
   courseTitle: string;
   imageBase64: string;
-  price: number;
+  price: number;  
+  teacherName: string;
 }
 
 @Component({

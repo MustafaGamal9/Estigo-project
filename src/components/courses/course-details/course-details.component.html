@@ -1,0 +1,40 @@
+<div class="course-details-container">
+  <div *ngIf="course" class="course-content-grid">
+    <div class="left-section">
+      <div class="course-image-section">
+        <img [src]="'data:image/jpeg;base64,' + course.logo" 
+             [alt]="course.courseTitle"
+             class="course-image">
+      </div>
+
+      <div class="course-content">
+        <div class="content-header" (click)="toggleContent()">
+          <h3>Course Content</h3>
+          <span class="toggle-icon">{{ isContentExpanded ? '▼' : '▶' }}</span>
+        </div>
+        <div class="lessons-list" [class.expanded]="isContentExpanded">
+          <div *ngFor="let lesson of course.lessons" class="lesson-item">
+            {{ lesson }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="course-info-section">
+      <div class="course-header">
+        <h1>{{ course.courseTitle }}</h1>
+        <p class="teacher-name">By {{ course.teacherName }}</p>
+      </div>
+
+      <div class="price-section">
+        <span class="price-value">${{ course.price | number:'1.2-2' }}</span>
+        <button class="enroll-button" [routerLink]="['/payment', course.courseId]">Enroll Now</button>
+      </div>
+
+      <div class="course-description">
+        <h2>About this course</h2>
+        <p>{{ course.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

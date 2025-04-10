@@ -1,13 +1,12 @@
-/* Enhanced Features Section with Animations */
+
 .features-section {
     background-color: #f9f9f9;
-    overflow: hidden; /* Prevent overflow from animations */
+    overflow: hidden;
     position: relative;
-    font-family: cursive;
     font-optical-sizing: auto;
 }
 
-/* Create floating particles in the background with a more natural drift */
+/*  floating particles  */
 .features-section::before {
     content: '';
     position: absolute;
@@ -56,13 +55,13 @@
 }
 
 .feature-card {
-    background-color: #fff; /* White background for cards */
+    background-color: #fff;
     padding: 30px;
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft shadow */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     text-align: center;
-    position: relative; /* For absolute positioning of pseudo-elements */
-    overflow: hidden; /* Keep effects contained */
+    position: relative; 
+    overflow: hidden; 
 }
 .feature-card i {
     font-size: 3rem;
@@ -130,10 +129,9 @@
 }
 
 .feature-card:hover::after {
-    border-color: rgba(78, 81, 255, 0.3); /* Semi-transparent brand color */
-    /* Add enhanced border animation */
+    border-color: rgba(78, 81, 255, 0.3); 
     animation: enhancedPulse 1.5s infinite alternate;
-    border-radius: 18px; /* Match the card's hover border-radius */
+    border-radius: 18px; 
 }
 
 

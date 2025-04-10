@@ -1,16 +1,12 @@
 import { GHeaderNotUserComponent } from './../shared/g-header-not-user/g-header-not-user.component';
 import { GHeaderProfileComponent } from './../shared/g-header-profile/g-header-profile.component';
-import { Component } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { WHeaderNotUserComponent } from "../shared/w-header-not-user/w-header-not-user.component";
-import { WHeaderProfileComponent } from "../shared/w-header-profile/w-header-profile.component";
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FooterComponent } from "../shared/footer/footer.component";
-import { Router, NavigationEnd } from '@angular/router'; 
-import { AuthService } from '../services/auth.service';
+import { Router, NavigationEnd } from '@angular/router';
 import { ChatbotIconComponent } from "../shared/chatbot-icon/chatbot-icon.component";
-import { CourseVideoComponent } from "../pages/course-video/course-video.component";
-
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -22,25 +18,37 @@ import { CourseVideoComponent } from "../pages/course-video/course-video.compone
     GHeaderNotUserComponent,
     GHeaderProfileComponent,
     ChatbotIconComponent,
-],
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Estigo';
+  isHomePage: boolean = false;
   isAuthenticated: boolean = false;
-  isHomePage: boolean = false; // Add a property to track if it's the home page
+  private isBrowser: boolean;
 
-  constructor(private router: Router, private authService: AuthService) { 
-      this.authService.isAuthenticated$.subscribe(isAuthenticated => {
-          this.isAuthenticated = isAuthenticated;
-      });
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private router: Router, private authService: AuthService) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
 
-      // Subscribe to router events to check if the current route is the home page
-      this.router.events.subscribe(event => {
-          if (event instanceof NavigationEnd) {
-              this.isHomePage = this.router.url === '/'; // Adjust the condition based on your home page route
-          }
-      });
+    // so the chatbot is only in home page ( mmkn nsebo fe elba2y msh 3aref)
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.isHomePage = this.router.url === '/';
+      }
+    });
+  }
+
+  ngOnInit() {
+    if (this.isBrowser) {
+      this.isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
+    }
+  
+    
+    // send the changes to auth service
+    this.authService.isAuthenticated$.subscribe(
+      (isAuthenticated: boolean) => this.isAuthenticated = isAuthenticated
+    );
+    
   }
 }

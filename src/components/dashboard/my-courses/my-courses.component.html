@@ -1,25 +1,24 @@
-<section class="my-courses-section">
-    <div class="my-courses-list">
-        <div class="my-course-item">
-            <img src="girl.png" alt="Object oriented programming">
-            <h3>Object Oriented Programming</h3>
-            <button>View Course</button>
-        </div>
-        <div class="my-course-item">
-            <img src="girl.png" alt="Fundamentals of database systems">
-            <h3>Fundamentals of Database Systems</h3>
-            <button>View Course</button>
-        </div>
-        <div class="my-course-item">
-            <img src="girl.png" alt="Web Development Basics">
-            <h3>Web Development Basics</h3>
-            <button>View Course</button>
-        </div>
-        <div class="my-course-item">
-            <img src="girl.png" alt="Data Structures and Algorithms">
-            <h3>Data Structures and Algorithms</h3>
-            <button>View Course</button>
-        </div>
-        <!-- Add more courses as needed -->
+<div class="my-courses-container">
+  <div class="courses-header">
+    <div class="title-section">
+      <h2>My Courses</h2>
+      <p class="subtitle">List of your courses</p>
     </div>
-</section>
+  </div>
+
+  <div class="course-grid">
+    <div *ngFor="let course of courses" class="course-card"  [routerLink]="['/myCourse', course.courseId]">
+      
+      <div class="card-image-container">
+        <img [src]="'data:image/jpeg;base64,' + course.imageBase64" [alt]="course.courseTitle">
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">{{ course.courseTitle }}</h3>
+        <p class="card-author">
+          <span class="icon-author"></span> {{ course.teacherName }}
+        </p>
+        <p class="card-status status-in-progress">Enrolled on {{ formatDate(course.enrollmentDate) }}</p>
+      </div>
+    </div>
+  </div>
+</div>

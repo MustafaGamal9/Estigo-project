@@ -1,7 +1,18 @@
+
+
+<!-- Intialize app first so it dont flicker-->
 <ng-container>
-    <app-g-header-profile *ngIf="isAuthenticated"></app-g-header-profile>
-    <app-g-header-not-user *ngIf="!isAuthenticated"></app-g-header-not-user>
+
+  <ng-container *ngIf="isAuthenticated; else notAuthenticated">
+    <app-g-header-profile></app-g-header-profile>
+  </ng-container>
+
+  <ng-template #notAuthenticated>
+    <app-g-header-not-user></app-g-header-not-user> 
+  </ng-template>
+
 </ng-container>
+
 
 <router-outlet></router-outlet>
 

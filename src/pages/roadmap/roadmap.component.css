@@ -1,4 +1,59 @@
-p{
-    padding: 90px;
-    font-size: 50px;
+.roadmap-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.roadmap-container h2 {
+    text-align: center;
+    color: #2F327D;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.roadmap-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    counter-reset: step-counter;
+}
+
+.step {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.step::before {
+    counter-increment: step-counter;
+    content: "Step " counter(step-counter);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #6A9C89;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 0 0 15px 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+}
+
+.step h3 {
+    color: #2F327D;
+    font-size: 1.3rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.step p {
+    color: #5A6473;
+    line-height: 1.7;
 }

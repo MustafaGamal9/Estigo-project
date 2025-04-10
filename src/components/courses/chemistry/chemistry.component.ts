@@ -7,6 +7,7 @@ interface Course {
   courseTitle: string;
   imageBase64: string;
   price: number;
+  teacherName: string;
 }
 
 @Component({

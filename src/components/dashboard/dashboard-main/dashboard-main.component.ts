@@ -13,5 +13,5 @@ import { QuizziesComponent } from "../quizzies/quizzies.component";
   styleUrl: './dashboard-main.component.css'
 })
 export class DashboardMainComponent {
-  @Input() selectedComponent: 'default' | 'my-courses' | 'quizzes' | 'payment-info' = 'default'; // default is main content
+  @Input() selectedComponent: 'Page1' | 'Page2' | 'Page3' | 'Page4' = 'Page1'; // default is main content
 }

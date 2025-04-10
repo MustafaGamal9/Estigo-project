@@ -1,5 +1,21 @@
 
-<div class="dashboard-container">
+<div class="dashboard-container" *ngIf="UserType=='Student'">
     <app-sidebar (componentChange)="onComponentChange($event)"></app-sidebar>
     <app-dashboard-main [selectedComponent]="selectedComponentName"></app-dashboard-main>
+</div>
+
+
+<div class="dashboard-container" *ngIf="UserType=='Teacher'">
+    <app-sidebar-teacher (componentChange)="onComponentChange($event)"></app-sidebar-teacher>
+    <app-dashboard-tmain [selectedComponent]="selectedComponentName"></app-dashboard-tmain>
+</div>
+
+<div class="dashboard-container" *ngIf="UserType=='Parent'">
+    <app-sidebar-parent (componentChange)="onComponentChange($event)"></app-sidebar-parent>
+    <app-dashboard-pmain [selectedComponent]="selectedComponentName"></app-dashboard-pmain>
+</div>
+
+<div class="dashboard-container" *ngIf="UserType=='Admin'">
+    <app-sidebar-admin (componentChange)="onComponentChange($event)"></app-sidebar-admin>
+    <app-dashboard-amain [selectedComponent]="selectedComponentName"></app-dashboard-amain>
 </div>

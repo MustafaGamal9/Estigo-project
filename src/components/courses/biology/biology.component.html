@@ -2,20 +2,20 @@
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Biology</h2>
-            <a class="view-more-btn" routerLink="/bioVm">View More</a>
+            <a class="view-more-btn" [routerLink]="['/course-vm', 3]">View More</a>
         </div>
 
         <div class="divider"></div>
 
         <div class="courses-container">
-            <div class="course-card" *ngFor="let course of courses">
+            <a [routerLink]="['/course', course.courseId]" class="course-card" *ngFor="let course of courses">
                 <img [src]="course.imageBase64" [alt]="course.courseTitle">
                 <div>
                     <h3 class="course-title">{{course.courseTitle}}</h3>
-                    <p class="course-instructor">Course Instructor</p>
+                    <p class="course-instructor">{{course.teacherName}}</p>
                 </div>
                 <p class="course-price">${{course.price}}</p>
-            </div>
+            </a>
         </div>
     </div>
 </section>

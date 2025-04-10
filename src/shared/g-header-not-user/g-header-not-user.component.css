@@ -92,3 +92,4 @@ input[type="search"]::-webkit-search-cancel-button {
 .navbar .nav-item a.btn.btn-success:hover::after {
       display: none; /* Explicitly prevent underline on button */
 }
+

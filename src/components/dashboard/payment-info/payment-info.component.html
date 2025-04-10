@@ -1,16 +1,30 @@
-<section class="payment-info-section">
-    <h2>Payment Information</h2>
-    <div class="payment-details">
-        <p><strong>Latest Payment Date:</strong> 2022/2/22</p>
-        <p><strong>Amount:</strong> $22</p>
-        <p><strong>Payment Method:</strong> Credit Card</p>
-        <p><strong>Status:</strong> Successful</p>
-    </div>
-    <div class="payment-details">
-        <p><strong>Previous Payment Date:</strong>2022/2/22</p>
-        <p><strong>Amount:</strong> $22</p>
-        <p><strong>Payment Method:</strong> PayPal</p>
-        <p><strong>Status:</strong> Successful</p>
-    </div>
-    <!-- Add more payment details as needed -->
-</section>
+<div class="page-container">
+    <section class="payment-history-section">
+        <h2>Payment History</h2>
+  
+        <div class="history-grid">
+            <div *ngFor="let payment of payments" class="payment-record">
+                <div class="record-header">
+                    <span class="record-title">{{ payment.courseTitle }}</span>
+                    <span class="record-date">{{ formatDate(payment.purchaseDate) }}</span>
+                </div>
+                <div class="record-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Amount:</span>
+                        <span class="detail-value amount">${{ payment.coursePrice }}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Method:</span>
+                        <span class="detail-value method">
+                            <i class="fas fa-credit-card payment-icon"></i> {{ payment.paymentMethod }}
+                        </span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Status:</span>
+                        <span class="detail-value status status-successful">Successful</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

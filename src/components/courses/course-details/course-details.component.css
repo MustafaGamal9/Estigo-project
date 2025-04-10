@@ -1,0 +1,353 @@
+/* Import a nice font (optional) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Define CSS Variables for easier theme management */
+:root {
+    /* === Color Palette === */
+    --primary-color: #4a90e2; /* A slightly softer, modern blue */
+    --primary-color-dark: #357abd;
+    --primary-color-light: #e7f0fa; /* Very light shade for backgrounds */
+    --secondary-color: #6c757d;
+    --success-color: #5cb85c; /* Softer green */
+    --danger-color: #d9534f; /* Softer red */
+    --warning-color: #f0ad4e;
+    --light-bg: #f8f9fa;
+    --white-color: #fff;
+    --text-color: #343a40; /* Darker grey for better contrast */
+    --text-muted: #6c757d;
+    --border-color: #e9ecef; /* Lighter border */
+    --border-radius: 8px;
+    --box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* Slightly more pronounced shadow */
+    --font-family: 'Inter', sans-serif;
+}
+
+/* Basic Reset & Body Styling */
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    margin: 0;
+}
+
+.course-details-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.course-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.course-image-section {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.course-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.course-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.course-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #333;
+}
+
+.teacher-name {
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.price-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.price-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.enroll-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.enroll-button:hover {
+    background-color: #2980b9;
+}
+
+.course-description {
+    padding: 1rem 0;
+}
+
+.course-description h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.course-content {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+.content-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.lessons-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.lessons-list.expanded {
+    max-height: 500px;
+}
+
+.lesson-item {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eee;
+    color: #555;
+}
+
+.lesson-item:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .course-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .course-image-section {
+        height: 250px;
+    }
+}
+
+/* Sidebar Area Styling */
+.course-sidebar {
+    padding: 2rem;
+    background-color: var(--primary-color-light); /* Light primary background for sidebar */
+    border-top: 1px solid var(--border-color); /* Separator on mobile */
+}
+
+.sidebar-sticky-content {
+    position: sticky;
+    top: 2rem;
+}
+
+.price-card {
+    background-color: var(--white-color); /* White card inside sidebar */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0, 0.05);
+}
+
+.price-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cta-button {
+    display: block;
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.15rem; /* Slightly larger button text */
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3); /* Color-matched shadow */
+}
+
+.cta-button:hover,
+.cta-button:focus {
+    background-color: var(--primary-color-dark);
+    box-shadow: 0 6px 12px rgba(74, 144, 226, 0.4);
+    transform: translateY(-2px); /* Subtle lift effect */
+    outline: none;
+}
+.cta-button:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 5px rgba(74, 144, 226, 0.3);
+}
+
+.course-meta-info {
+   /* Removed top border, sidebar background provides separation */
+   padding-top: 0;
+}
+
+.course-meta-info h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    color: var(--primary-color-dark); /* Darker primary for this heading */
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0.25rem; /* More vertical padding */
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid #dbeafd; /* Lighter border using shades of background */
+}
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-weight: 600;
+    color: var(--text-color); /* Use standard text color */
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+}
+
+.info-item span:last-child {
+    text-align: right;
+    color: var(--text-color); /* Values less muted */
+    font-weight: 500; /* Slightly bolder value */
+}
+
+.status-badge {
+    padding: 0.3rem 0.7rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--white-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1; /* Ensure consistent height */
+}
+
+.status-badge.available {
+    background-color: var(--success-color);
+}
+
+.status-badge.unavailable {
+    background-color: var(--danger-color);
+}
+
+/* Loading and Error States */
+/* (Keep previous styling or adjust colors if needed) */
+.loading, .error {
+    text-align: center;
+    padding: 3rem 1rem;
+    font-size: 1.1rem;
+    border-radius: var(--border-radius);
+    margin: 1rem 0;
+}
+
+.loading {
+    color: var(--text-muted);
+}
+
+.error {
+    color: var(--danger-color);
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 992px) {
+    .course-content-grid {
+        grid-template-columns: 2fr 1fr; /* Keep 2-column layout */
+        border: none; /* Remove outer border, rely on shadow */
+    }
+
+    .course-main {
+        padding: 2.5rem 3rem; /* More horizontal padding */
+        border-right: 1px solid var(--border-color); /* Add subtle border between columns */
+    }
+
+     .course-sidebar {
+        padding: 2.5rem;
+        border-top: none; /* Remove top border from mobile */
+        background-color: var(--primary-color-light); /* Keep sidebar bg color */
+     }
+
+    .course-header h1 {
+        font-size: 2.75rem;
+    }
+}
+
+/* Optional: Adjustments for very large screens */
+@media (min-width: 1400px) {
+    .course-details-container {
+        max-width: 1300px;
+    }
+     .course-main {
+        padding: 3rem 3.5rem;
+    }
+     .course-sidebar {
+        padding: 3rem;
+     }
+}

@@ -1,67 +1,142 @@
-/* style.css */
-
-/* ... (Previous styles for payment-info-section) ... */
-
-.quizzes-section {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-
-.quizzes-section h2 {
-    font-size: 1.5em;
-    margin-top: 0;
-    margin-bottom: 15px;
-    color: #333;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 5px;
-}
-
-.my-quizzes-list {
-    display: flex; /* Arrange quiz items in a row */
-    flex-direction: column; /* Stack quiz items vertically */
-    gap: 15px; /* Add spacing between quiz items */
-}
-
-.my-quiz-item {
-    display: flex; /* Arrange info and link in a row */
-    justify-content: space-between; /* Space out info and link */
-    align-items: center; /* Vertically align info and link */
-    padding: 15px;
-    border: 1px solid #eee;
-    border-radius: 3px;
-    background-color: #fff; /* White background for quiz items */
-}
-
-.my-quiz-item-info {
-    /* Styles for quiz title and grade (if needed, for spacing etc.) */
-}
-
-.my-quiz-item h4 {
-    font-size: 1.1em;
-    margin-top: 0;
-    margin-bottom: 5px;
-    color: #333; /* Darker color for quiz title */
-}
-
-.my-quiz-item p {
+/* Assume Poppins font is available globally */
+:host {
+    display: block;
+    background-color: #f8f9fa; /* Consistent page background */
+    font-family: 'Poppins', sans-serif;
+    padding: 30px 40px; /* Consistent page padding */
+  }
+  
+  .page-container {
+    max-width: 1300px; /* Consistent max-width */
+    margin: 0 auto;
+  }
+  
+  .quizzes-section h2 {
+    font-size: 2rem; /* Consistent heading size */
+    font-weight: 600;
+    color: #333; /* Consistent heading color */
+    margin: 0 0 30px 0; /* Consistent heading margin */
+    /* Removed border-bottom and specific color */
+  }
+  
+  /* --- List and Item Styling --- */
+  .my-quizzes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Consistent gap between items */
+  }
+  
+  .my-quiz-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 25px; /* Adjust padding */
+    border-radius: 15px; /* Consistent card radius */
+    background-color: #ffffff; /* Consistent card background */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Consistent card shadow */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    /* Removed internal border and specific background */
+  }
+  
+  .my-quiz-item:hover {
+    transform: translateY(-3px); /* Consistent hover lift */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Consistent hover shadow */
+  }
+  
+  .my-quiz-item-info {
+    flex-grow: 1;
+    margin-right: 15px; /* Space between info and action/status */
+  }
+  
+  .my-quiz-item h4 {
+    font-size: 1.05em; /* Consistent title size within card */
+    font-weight: 600;
+    margin: 0 0 5px 0; /* Adjust margin */
+    color: #343a40; /* Consistent dark text */
+  }
+  
+  .my-quiz-item p.quiz-grade {
     margin: 0;
-    font-size: 1em;
-    color: #777; /* Lighter color for grade */
-}
-
-.my-quiz-item a {
-    display: inline-block; /* Make the link a block-level element for padding */
-    padding: 8px 15px;
-    background-color: #029335; /* Blue background for button-like link */
-    color: white; /* White text color for link */
-    text-decoration: none; /* Remove underline from link */
-    border-radius: 3px;
     font-size: 0.9em;
-    transition: background-color 0.3s ease; /* Smooth hover effect */
-}
-
-.my-quiz-item a:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
+    color: #6c757d; /* Consistent muted text color */
+    line-height: 1.4;
+  }
+  
+  .my-quiz-item p.quiz-grade .grade-value {
+      font-weight: 600; /* Make the grade value stand out */
+      color: #495057; /* Slightly darker than label */
+  }
+  
+  /* Optional: Style for lower grades */
+  .my-quiz-item p.quiz-grade .grade-value.low-grade {
+    color: #dc3545; /* Red color for emphasis */
+  }
+  
+  
+  /* --- Action Link Styling --- */
+  .view-quiz-link {
+    display: inline-block;
+    padding: 7px 16px; /* Slightly smaller padding */
+    background-color: #e9ecef; /* Use light grey bg, less prominent */
+    color: #495057; /* Dark grey text */
+    text-decoration: none;
+    border-radius: 8px; /* Consistent radius */
+    font-size: 0.85em;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap; /* Prevent wrapping */
+    border: 1px solid #ced4da; /* Subtle border */
+  }
+  
+  .view-quiz-link:hover {
+    background-color: #dee2e6; /* Slightly darker grey on hover */
+    color: #212529;
+    border-color: #adb5bd;
+  }
+  
+  /* --- Status Text Styling --- */
+  /* Style like Payment status badges */
+  .quiz-status {
+    font-weight: 600;
+    padding: 5px 12px; /* Match status badges */
+    border-radius: 8px; /* Match status badges */
+    display: inline-block;
+    font-size: 0.8em; /* Match status badges */
+    text-align: center;
+    letter-spacing: 0.3px;
+    border: 1px solid transparent;
+  }
+  
+  .quiz-status.status-not-graded {
+    color: #6c757d; /* Muted text */
+    background-color: #e9ecef; /* Muted background */
+    border-color: #dee2e6; /* Matching border */
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 600px) { /* Adjusted breakpoint */
+    :host {
+      padding: 20px; /* Consistent mobile padding */
+    }
+    .quizzes-section h2 {
+      font-size: 1.6rem;
+      text-align: center;
+    }
+  
+    .my-quiz-item {
+      padding: 15px 20px;
+      flex-direction: column; /* Stack info and link vertically */
+      align-items: flex-start; /* Align items to the start */
+      gap: 12px; /* Add gap when stacked */
+    }
+  
+    .my-quiz-item-info {
+       margin-right: 0; /* Remove right margin when stacked */
+       margin-bottom: 5px; /* Add small bottom margin */
+    }
+  
+    .view-quiz-link, .quiz-status {
+      /* align-self: flex-start;  Keep default alignment or adjust as needed */
+      width: auto; /* Allow button/status to size naturally */
+    }
+  }
