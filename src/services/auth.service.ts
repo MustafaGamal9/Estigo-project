@@ -112,6 +112,13 @@ export class AuthService {
 
   registerParent(data: RegisterResponseParent) {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post<LoginResponse>("https://est.runasp.net/api/Auth/register/parent", data, { headers });
+    return this.http.post<LoginResponse>("https://est.runasp.net/api/Auth/register/parent", data, { 
+      headers,
+      observe: 'response' // Get the full response to better handle errors
+    }).pipe(
+      tap(response => {
+        console.log('Parent registration successful:', response);
+      })
+    );
   }
-} 
+}

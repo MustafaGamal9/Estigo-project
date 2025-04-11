@@ -68,6 +68,12 @@ export class RegisterComponent implements AfterViewInit {
       alert('Passwords do not match!');
       return;
     }
+    
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
+    if (!passwordRegex.test(this.formData.password)) {
+      alert('Password must contain at least one uppercase letter, one lowercase letter, and one special character (!@#$%^&*)');
+      return;
+    }
 
     let response;
 
@@ -101,10 +107,7 @@ export class RegisterComponent implements AfterViewInit {
 
         case 'parent':
           response = await this.authService.registerParent({
-            email: this.formData.email,
-            password: this.formData.password,
-            name: this.formData.name,
-            gender: this.formData.gender
+            ...requestData
           }).toPromise();
           break;
 
@@ -118,8 +121,27 @@ export class RegisterComponent implements AfterViewInit {
       }
     } catch (error: any) {
       console.error('Registration failed:', error);
-      const errorMessage = error.error?.message || error.message || 'Registration failed. Please try again.';
-      alert(`Registration failed: ${errorMessage}`);
+      let errorMessage = 'Registration failed. Please try again.';
+      
+      if (error.status === 400) {
+        if (error.error?.errors) {
+          // Handle validation errors from API
+          const errors = error.error.errors;
+          if (errors.Password) {
+            errorMessage = errors.Password.join(' ');
+          } else if (errors.Email) {
+            errorMessage = errors.Email.join(' ');
+          } else if (errors.Name) {
+            errorMessage = errors.Name.join(' ');
+          } else if (error.error.message) {
+            errorMessage = error.error.message;
+          }
+        } else {
+          errorMessage = error.error?.message || error.message || errorMessage;
+        }
+      }
+      
+      alert(errorMessage);
     }
   }
 }
